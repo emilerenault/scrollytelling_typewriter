@@ -4,26 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>scrollytelling</title>
+    <title>A visual history of typewriter</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.typekit.net/oms8kyr.css">
     <link rel="stylesheet" href="https://use.typekit.net/oms8kyr.css">
 </head>
 
 <body>
-    </section>
     <section id="s01">
-        <div class="parent">
-            <div class="div1">
-                <h1 data-aos="fade-down">A visual history of typewriter</h1>
-                <p>Sroll down to discover</p>
-            </div>
-        </section>
+        <!-- Conteneur pour la Scrolly Video -->
+        <div id="scrolly-video"></div>
+    </section>
+  
+
+
+    <script src="https://cdn.jsdelivr.net/npm/scrolly-video@0.0.2/dist/scrolly-video.js"></script>
+    <script>
+        new ScrollyVideo({
+            scrollyVideoContainer: "scrolly-video", // ID du conteneur
+            src: "./videos/ecran_1_v1.mp4", // Chemin vers votre vidéo
+            autoplay: false, // Désactive la lecture automatique
+            muted: true, // Coupe le son
+            loop: false, // Désactive la boucle
+            scrollBased: true, // Active le contrôle basé sur le défilement
+            pauseWhenNotScrolling: true, // Met la vidéo en pause lorsqu'il n'y a plus de défilement
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
 
 </html>
