@@ -9,9 +9,9 @@ Ce projet est une **interprétation immersive** de l’article [_A Visual Histor
 - **Écran 2 :** Apparition d’une **citation**, qui introduit le sujet.
 - **Écran 3 :** Début de la navigation dans l’article, avec une **interface à double navigation** :
   - `Articles` (en haut à gauche, actif par défaut)
-  - `Œuvres` (en haut à droite)
+  - `Œuvres` (en haut à droite) qui permettra de visualiser uniquement les oeuvres sans l'article avec une animation de scroll entre chaque oeuvre pour rendre l'experience encore plus attractive
 
-Un **bouton central animé** (comme dans le [Lookbook Quechua SS25](https://quechua-lookbook.com/ss25/fr/)) apparaîtra après la citation, pour guider l’utilisateur dans la navigation.
+En conception : Un **bouton central animé** (comme dans le [Lookbook Quechua SS25](https://quechua-lookbook.com/ss25/fr/)) apparaîtra après la citation, pour guider l’utilisateur dans la navigation.
 
 ## 🛠️ Technologies utilisées
 
@@ -19,6 +19,7 @@ Un **bouton central animé** (comme dans le [Lookbook Quechua SS25](https://quec
 - `CSS`
 - `JavaScript`
 - `scrollyvideo.js`
+- `AOS animation`
 
 ## 📱 Format ciblé
 
