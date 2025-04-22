@@ -11,18 +11,43 @@
 </head>
 
 <body>
+    <button a href="index.html" class="sticky-button" id="article-button">Article</button>
+    <button class="sticky-button" id="oeuvres-button">Oeuvres</button>
     <section id="s01">
         <!-- Conteneur pour la Scrolly Video -->
         <div id="scrolly-video"></div>
     </section>
-  
+    <section id="s02">
+        <div class="PhotoEdgarPlusTexteIntro">
+            <div class="PhotoElbert"><img src="./images/PhotoEdgar-removebg-preview.png" alt=""> </div>
+            <div class="TexteIntro" data-aos="fade-right" data-aos-duration="1000">
+                <p id="TexteElbert"> <span class="h2">Elbert Hubbard</span> observed in 1908 in what became one of
+                    history’s finest definitions
+                    of art. Hubbard was writing at the dawn of an unusual new art form, wherein artists were
+                    appropriating a new thing — a trailblazing technology — to find a new way of making art.</p>
+            </div>
+        </div>
+    </section>
+    <section id="s03">
+        <div class="OeuvreLookingForwardPlusTexte">
+            <div class="PhotoLookingForward"><img src="./images/LookingForward.jpg" alt=""> </div>
+            <div class="TexteLookingForward"> <span class="h2">Looking Forward<br>by Leslie Nichols<br>(2010)</span><br>Trained as a traditional
+                painter, Nichols now combines texts with images to create mixed-media landscapes and portraits. Her
+                typewriter text portraits are driven by a desire to understand different facets of women’s rights and
+                identity as well as her place, and sense of womanhood, in her own community. Nichols creates large-scale
+                text pieces with hand-stamped oil-based inks and stenciled graphite; smaller, more intimate pieces are
+                produced entirely with a manual typewriter.</div>
+        </div>
+
+    </section>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/scrolly-video@0.0.2/dist/scrolly-video.js"></script>
     <script>
         new ScrollyVideo({
             scrollyVideoContainer: "scrolly-video", // ID du conteneur
-            src: "./videos/ecran_1_v1.mp4", // Chemin vers votre vidéo
+            src: "./videos/ecran_1_1.2.mp4", // Chemin vers votre vidéo
             autoplay: false, // Désactive la lecture automatique
             muted: true, // Coupe le son
             loop: false, // Désactive la boucle
@@ -30,7 +55,42 @@
             pauseWhenNotScrolling: true, // Met la vidéo en pause lorsqu'il n'y a plus de défilement
         });
     </script>
+    <script>
+        const stickyButtons = document.querySelectorAll('.sticky-button'); // Sélectionne tous les boutons avec la classe sticky-button
+        const section3 = document.getElementById('s03'); // Sélectionne la section 3
 
+        window.addEventListener('scroll', () => {
+            const section3Top = section3.getBoundingClientRect().top; // Position de la section 3 par rapport à la fenêtre
+            const windowHeight = window.innerHeight; // Hauteur de la fenêtre visible
+
+            // Vérifie si la section 2 est visible dans la fenêtre
+            if (section3Top <= windowHeight && section3Top >= 0) {
+                stickyButtons.forEach(button => {
+                    button.style.display = 'block'; // Affiche tous les boutons
+                });
+            } else {
+                stickyButtons.forEach(button => {
+                    button.style.display = 'none'; // Cache tous les boutons
+                });
+            }
+        });
+    </script>
+    <script>
+        const articleButton = document.getElementById('article-button');
+    
+        // Vérifie si l'utilisateur est sur la page "index.html"
+        if (window.location.pathname.includes('index.html')) {
+            articleButton.classList.add('active'); // Ajoute la classe "active" au bouton
+        }
+    </script>
+    <script>
+        const articleButton = document.getElementById('article-button');
+    
+        // Vérifie si l'utilisateur est sur la page "index.html"
+        if (window.location.pathname.includes('index.html')) {
+            articleButton.classList.add('active'); // Ajoute la classe "active" au bouton
+        }
+    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();

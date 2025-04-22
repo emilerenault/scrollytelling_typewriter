@@ -4,21 +4,175 @@ body {
     font-family: "montserrat", sans-serif;
 }
 
+
+#article-button {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    position: fixed;
+    /* Fixe le bouton à un emplacement précis */
+    top: 10px;
+    /* Positionne le bouton à 10px du haut */
+    left: 10px;
+    /* Positionne le bouton à 10px de la gauche */
+    padding: 10px 20px;
+    /* Ajoute de l'espace intérieur */
+    color: rgb(0, 0, 0);
+    /* Couleur du texte */
+    border: 1px color(rgb(0, 0, 0) green blue);
+    /* Supprime la bordure */
+    border-radius: 20px;
+    /* Rend le bouton arrondi */
+    font-size: 16px;
+    /* Taille du texte */
+    cursor: pointer;
+    /* Change le curseur au survol */
+    display: none;
+    /* Cache le bouton par défaut */
+    z-index: 1000;
+    /* Place le bouton au-dessus des autres éléments */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Ajoute une ombre */
+}
+
+#oeuvres-button {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    position: fixed;
+    /* Fixe le bouton à un emplacement précis */
+    top: 10px;
+    /* Positionne le bouton à 10px du haut */
+    right: 10px;
+    /* Positionne le bouton à 10px de la droite */
+    padding: 10px 20px;
+    /* Ajoute de l'espace intérieur */
+    color: rgb(0, 0, 0);
+    /* Couleur du texte */
+    border: 1px color(rgb(0, 0, 0) green blue);
+    /* Supprime la bordure */
+    border-radius: 20px;
+    /* Rend le bouton arrondi */
+    font-size: 16px;
+    /* Taille du texte */
+    cursor: pointer;
+    /* Change le curseur au survol */
+    display: none;
+    /* Cache le bouton par défaut */
+    z-index: 1000;
+    /* Place le bouton au-dessus des autres éléments */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Ajoute une ombre */
+}
+
 /* Section 01 */
 #s01 {
-    height: 300vh; /* Permet un défilement plus long */
-    position: relative; /* Nécessaire pour positionner les éléments enfants */
+    height: 300vh;
+    /* Permet un défilement plus long */
+    position: relative;
+    /* Nécessaire pour positionner les éléments enfants */
 
 }
 
 /* Conteneur pour la vidéo */
 #scrolly-video {
-    width: 100%; /* La vidéo occupe toute la largeur */
-    height: 100%; /* La vidéo occupe toute la hauteur */
-    position: fixed; /* Fixe la vidéo à l'écran */
+    width: auto;
+    /* La vidéo occupe toute la largeur */
+    height: 1fr;
+    /* La vidéo occupe toute la hauteur */
+    position: fixed;
+    /* Fixe la vidéo à l'écran */
     top: 0;
     left: 0;
-    object-fit: cover; /* Couvre tout l'espace sans déformer la vidéo */
-    z-index: -1; /* Place la vidéo derrière le contenu */
+    object-fit: cover;
+    /* Couvre tout l'espace sans déformer la vidéo */
+    z-index: -1;
+    /* Place la vidéo derrière le contenu */
 }
 
+/* Section 02 */
+.PhotoEdgarPlusTexteIntro {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 0px;
+}
+
+.PhotoElbert {
+    grid-area: 1 / 1 / 2 / 3;
+    ;
+    padding-top: 220%;
+    margin: 0;
+    height: 10%;
+    width: auto;
+}
+
+.TexteIntro {
+    grid-area: 1 / 2 / 2 / 5;
+    margin: 20px;
+}
+
+#TexteElbert {
+    border: 3px solid black;
+    /* Ajoute un cadre autour du paragraphe */
+    padding: 7%;
+    /* Ajoute un espace entre le texte et le cadre */
+    display: inline-block;
+    /* Ajuste la taille du cadre à celle du contenu */
+    font-size: 20px;
+    backdrop-filter: blur(30px)
+}
+
+.h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Section 03 */
+.OeuvreLookingForwardPlusTexte {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Une seule colonne pour empiler l'image et le texte */
+    grid-template-rows: auto auto;
+    /* Deux lignes : une pour l'image, une pour le texte */
+    grid-row-gap: 10px;
+    /* Ajoute un faible espace entre l'image et le texte */
+    margin: 20px;
+    /* Ajoute un espace autour de la section */
+    margin-top: 200px;
+}
+
+.PhotoLookingForward {
+    width: 100%;
+    /* L'image occupe toute la largeur de la grille */
+    height: auto;
+    /* Ajuste la hauteur automatiquement pour conserver les proportions */
+    overflow: hidden;
+    /* Cache tout débordement éventuel */
+}
+
+.PhotoLookingForward img {
+    width: 98%;
+    /* L'image occupe toute la largeur de son conteneur */
+    height: auto;
+    /* Ajuste la hauteur automatiquement pour conserver les proportions */
+    object-fit: contain;
+    /* Assure que l'image est entièrement visible sans déformation */
+    border: 3px solid black;
+}
+
+.TexteLookingForward {
+    margin: 0;
+    /* Supprime les marges inutiles */
+    padding: 10px;
+    /* Ajoute un léger espace intérieur si nécessaire */
+    text-align: left;
+    /* Aligne le texte à gauche */
+    font-size: 16px;
+    /* Définit la taille de la police */
+}
+#article-button.active {
+    border: 4px solid #FFD700; /* Bordure plus grosse et dorée pour l'état activé */
+    background-color: #0056b3; /* Change légèrement la couleur de fond */
+}
