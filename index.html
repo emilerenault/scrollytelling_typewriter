@@ -11,6 +11,18 @@
 </head>
 
 <body>
+    <div class="progress"></div>
+    <div class="dropup">
+        <button class="dropbtn" id="menu-btn">
+            <div class="progress-bar" id="progress-bar"></div>
+            <span>Menu</span>
+        </button>
+        <div class="dropup-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
     <button a href="index.html" class="sticky-button" id="article-button">Article</button>
     <button class="sticky-button" id="oeuvres-button">Oeuvres</button>
     <section id="s01">
@@ -30,9 +42,8 @@
     </section>
     <section id="s03">
         <div class="OeuvreLookingForwardPlusTexte">
-            <div data-aos="flip-left"
-            data-aos-easing="ease-out-cubic"
-            data-aos-duration="2000" class="PhotoLookingForward"><img src="./images/oeuvres/LookingForward.jpg" alt=""> </div>
+            <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"
+                class="PhotoLookingForward"><img src="./images/oeuvres/LookingForward.jpg" alt=""> </div>
             <div class="TexteLookingForward"> <span class="h2">Looking Forward<br>by Leslie
                     Nichols<br>(2010)</span><br>Trained as a traditional
                 painter, Nichols now combines texts with images to create mixed-media landscapes and portraits. Her
@@ -43,61 +54,9 @@
         </div>
 
     </section>
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/scrolly-video@0.0.2/dist/scrolly-video.js"></script>
-    <script>
-        new ScrollyVideo({
-            scrollyVideoContainer: "scrolly-video", // ID du conteneur
-            src: "./videos/ecran_1_1.2.mp4", // Chemin vers votre vidéo
-            autoplay: false, // Désactive la lecture automatique
-            muted: true, // Coupe le son
-            loop: false, // Désactive la boucle
-            scrollBased: true, // Active le contrôle basé sur le défilement
-            pauseWhenNotScrolling: true, // Met la vidéo en pause lorsqu'il n'y a plus de défilement
-        });
-    </script>
-    <script>
-        const stickyButtons = document.querySelectorAll('.sticky-button'); // Sélectionne tous les boutons avec la classe sticky-button
-        const section3 = document.getElementById('s03'); // Sélectionne la section 3
-
-        window.addEventListener('scroll', () => {
-            const section3Top = section3.getBoundingClientRect().top; // Position de la section 3 par rapport à la fenêtre
-            const windowHeight = window.innerHeight; // Hauteur de la fenêtre visible
-
-            // Vérifie si la section 2 est visible dans la fenêtre
-            if (section3Top <= windowHeight && section3Top >= 0) {
-                stickyButtons.forEach(button => {
-                    button.style.display = 'block'; // Affiche tous les boutons
-                });
-            } else {
-                stickyButtons.forEach(button => {
-                    button.style.display = 'none'; // Cache tous les boutons
-                });
-            }
-        });
-    </script>
-    <script>
-        const articleButton = document.getElementById('article-button');
-
-        // Vérifie si l'utilisateur est sur la page "index.html"
-        if (window.location.pathname.includes('index.html')) {
-            articleButton.classList.add('active'); // Ajoute la classe "active" au bouton
-        }
-    </script>
-    <script>
-        const articleButton = document.getElementById('article-button');
-
-        // Vérifie si l'utilisateur est sur la page "index.html"
-        if (window.location.pathname.includes('index.html')) {
-            articleButton.classList.add('active'); // Ajoute la classe "active" au bouton
-        }
-    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
