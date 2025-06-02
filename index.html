@@ -8,25 +8,52 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/oms8kyr.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chewy&family=IM+Fell+DW+Pica:ital@0;1&family=Knewave&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <div class="progress"></div>
-    <div class="dropup">
-        <button class="dropbtn" id="menu-btn">
-            <div class="progress-bar" id="progress-bar"></div>
-            <span>Menu</span>
+    <!-- =========================
+     NAVIGATION PRINCIPALE
+     ========================= -->
+    <div class="nav-bar">
+        <!-- Bouton switch Article/Oeuvre -->
+        <button class="switch-btn" id="switch-article-oeuvre" aria-label="Basculer entre Article et Oeuvre">
+            <!-- Icône SVG stylisée (suit la couleur du bouton via currentColor) -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                    d="M21 15L17.914 11.914C17.5389 11.5391 17.0303 11.3284 16.5 11.3284C15.9697 11.3284 15.4611 11.5391 15.086 11.914L6 21M5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3ZM11 9C11 10.1046 10.1046 11 9 11C7.89543 11 7 10.1046 7 9C7 7.89543 7.89543 7 9 7C10.1046 7 11 7.89543 11 9Z"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
         </button>
-        <div class="dropup-content">
-            <a href="#">Chapitre 1</a>
-            <a href="#">Chapitre 2</a>
-            <a href="#">Chapitre 3</a>
+
+        <!-- Menu déroulant principal -->
+        <div class="dropup">
+            <!-- Bouton Menu avec barre de progression -->
+            <button class="dropbtn" id="menu-btn">
+                <div class="progress-bar" id="progress-bar"></div>
+                <span>Menu</span>
+            </button>
+            <!-- Contenu du menu déroulant -->
+            <div class="dropup-content">
+                <a href="#">Chapitre 1</a>
+                <a href="#">Chapitre 2</a>
+                <a href="#">Chapitre 3</a>
+            </div>
         </div>
     </div>
     <section id="s01">
         <!-- Conteneur pour la Scrolly Video -->
         <div id="scrolly-video"></div>
     </section>
+    <!-- Carré noir citation avant la section 2 -->
+    <div class="citation-banner" id="typewriter-effect">
+        Art is not a thing<br>it is a way
+    </div>
     <section id="s02">
         <div class="PhotoEdgarPlusTexteIntro">
             <div class="PhotoElbert"><img src="./images/PhotoEdgar-removebg-preview.png" alt=""> </div>
@@ -42,7 +69,8 @@
         <div class="OeuvreLookingForwardPlusTexte">
             <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"
                 class="PhotoLookingForward"><img src="./images/oeuvres/LookingForward.jpg" alt=""> </div>
-            <div class="TexteLookingForward"> <span class="h2">Looking Forward<br>by Leslie
+            <div class="TexteLookingForward" id="typewriter-lookingforward"> <span class="h2">Looking Forward<br>by
+                    Leslie
                     Nichols<br>(2010)</span><br>Trained as a traditional
                 painter, Nichols now combines texts with images to create mixed-media landscapes and portraits. Her
                 typewriter text portraits are driven by a desire to understand different facets of women’s rights and

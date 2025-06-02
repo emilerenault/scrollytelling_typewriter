@@ -5,50 +5,119 @@ body {
     background-color: #f2f2f2;
 }
 
-/* Dropup Button */
-.dropbtn {
-    position: relative;
-    background-color: #ffffff;
-    color: rgb(33, 33, 33);
-    padding: 10px;
-    font-size: 20px;
-    border: none solid #000000;
-    cursor: pointer;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    min-width: 100px;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-/* Barre de progression en fond du bouton */
-.dropbtn .progress-bar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 0;
-    background: #f2f2f2;
-    z-index: 0;
-    transition: width 0.1s linear;
-    border-radius: 5px;
-}
-
-/* Le texte du bouton reste au-dessus */
-.dropbtn span {
-    position: relative;
-    z-index: 1;
-}
-
-/* The container <div> - needed to position the dropup content */
-.dropup {
+/* =========================
+   BARRE DE NAVIGATION FIXE EN BAS
+   ========================= */
+.nav-bar {
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 16px; /* Espace entre les boutons */
+}
+
+.round-btn,
+.dropup {
+    display: none;
+}
+
+.round-btn {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000; /* Couleur du picto (SVG) */
+    background: #fff;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.round-btn.active {
+    background: #000;
+    color: #f1f1f1; /* Picto blanc */
+    border-color: #f1f1f1;
+}
+
+/* =========================
+   BOUTON SWITCH ARTICLE/OEUVRE
+   ========================= */
+.switch-btn {
+    border-radius: 5px; /* Bouton parfaitement rond */
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000; /* Couleur du picto SVG (currentColor) */
+    background: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+/* Etat actif : fond noir, picto blanc */
+.switch-btn.active {
+    background: #000;
+    color: #f1f1f1;
+    border-color: #f1f1f1;
+}
+
+/* =========================
+   BOUTON MENU PRINCIPAL
+   ========================= */
+.dropbtn {
+    position: relative;
+    background-color: #ffffff;
+    color: rgb(33, 33, 33);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: #000000 solid 1px;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+    min-width: 100px;
+    font-family: 'Courier New', Courier, monospace;
+    height: 48px; /* Hauteur uniforme avec le bouton switch */
+}
+
+/* Barre de progression dans le bouton menu */
+.dropbtn .progress-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: #d4d3d3;
+    z-index: 0;
+    transition: width 0.1s linear;
+}
+
+/* Texte du bouton menu au-dessus de la barre de progression */
+.dropbtn span {
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================
+   MENU DÉROULANT (DROPUUP)
+   ========================= */
+.dropup {
+    position: static;
+    /* Important : plus de fixed ici */
+    display: flex;
+    flex-direction: row;
+    /* Pour que le bouton menu reste horizontal */
     align-items: center;
 }
 
@@ -56,11 +125,12 @@ body {
 .dropup-content {
     display: none;
     position: absolute;
-    bottom: 50px;
+    bottom: 64px; /* 48px (hauteur bouton) + 16px (gap) */
+    right: 0;
     background-color: #f1f1f1;
     min-width: 160px;
     z-index: 1;
-    border-radius: 30px;
+    border-radius: 5px;
     border: #000000 solid 1px;
 }
 
@@ -72,11 +142,6 @@ body {
     display: block;
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
-}
-
-/* Change color of dropup links on hover */
-.dropup-content a:hover {
-    background-color: #ddd
 }
 
 /* Show the dropup menu on hover */
@@ -168,3 +233,24 @@ body {
     font-size: 16px;
 }
 
+/* =========================
+   BANNIÈRE CITATION AVANT SECTION 2
+   ========================= */
+.citation-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 120px;           /* Hauteur fixe adaptée à deux lignes */
+    max-height: 120px;           /* Empêche la bannière de grandir */
+    background: #1F130D;
+    color: #f1f1f1;
+    text-align: center;
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0 20px;             /* Padding horizontal seulement */
+    letter-spacing: 0.05em;
+    box-sizing: border-box;
+    overflow: hidden;            /* Cache le texte qui dépasserait */
+}
