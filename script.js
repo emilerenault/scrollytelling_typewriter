@@ -11,37 +11,25 @@ if (window.ScrollyVideo) {
   });
 }
 
-// Affichage des boutons sticky à la section 3
 document.addEventListener("DOMContentLoaded", function () {
-  const stickyButtons = document.querySelectorAll(".sticky-button");
-  const section3 = document.getElementById("s03");
+  // Affichage du bouton menu à partir de la section 2, puis il reste affiché
+  const dropup = document.querySelector(".dropup");
+  const section2 = document.getElementById("s02");
 
-  function toggleStickyButtons() {
-    if (!section3) return;
-    const section3Top = section3.getBoundingClientRect().top;
-    const section3Bottom = section3.getBoundingClientRect().bottom;
-    const windowHeight = window.innerHeight;
+  function toggleMenuButton() {
+    if (!section2 || !dropup) return;
+    const section2Top = section2.getBoundingClientRect().top + window.scrollY;
+    const triggerScroll = section2Top - window.innerHeight / 2;
 
-    // Affiche les boutons si la section 3 est visible à l'écran
-    if (section3Top < windowHeight && section3Bottom > 0) {
-      stickyButtons.forEach((button) => {
-        button.style.display = "block";
-      });
+    if (window.scrollY >= triggerScroll) {
+      dropup.style.display = "flex";
     } else {
-      stickyButtons.forEach((button) => {
-        button.style.display = "none";
-      });
+      dropup.style.display = "none";
     }
   }
 
-  window.addEventListener("scroll", toggleStickyButtons);
-  toggleStickyButtons(); // Pour gérer l'affichage dès le chargement
-
-  // Activation du bouton Article si sur index.html
-  const articleButton = document.getElementById("article-button");
-  if (articleButton && window.location.pathname.includes("index.html")) {
-    articleButton.classList.add("active");
-  }
+  window.addEventListener("scroll", toggleMenuButton);
+  toggleMenuButton(); // Pour gérer l'affichage dès le chargement
 
   // Progression dans le bouton Menu
   const progressBar = document.getElementById('progress-bar');
