@@ -10,66 +10,19 @@ body {
    ========================= */
 .nav-bar {
     position: fixed;
+    display: ;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
     display: flex;
     align-items: center;
-    gap: 16px; /* Espace entre les boutons */
+    gap: 16px;
+    /* Espace entre les boutons */
 }
 
-.round-btn,
 .dropup {
     display: none;
-}
-
-.round-btn {
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    padding: 0;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000; /* Couleur du picto (SVG) */
-    background: #fff;
-    border: 2px solid #000;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
-}
-
-.round-btn.active {
-    background: #000;
-    color: #f1f1f1; /* Picto blanc */
-    border-color: #f1f1f1;
-}
-
-/* =========================
-   BOUTON SWITCH ARTICLE/OEUVRE
-   ========================= */
-.switch-btn {
-    border-radius: 5px; /* Bouton parfaitement rond */
-    width: 48px;
-    height: 48px;
-    padding: 0;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000; /* Couleur du picto SVG (currentColor) */
-    background: #fff;
-    border: 1px solid #000;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
-}
-
-/* Etat actif : fond noir, picto blanc */
-.switch-btn.active {
-    background: #000;
-    color: #f1f1f1;
-    border-color: #f1f1f1;
 }
 
 /* =========================
@@ -88,7 +41,8 @@ body {
     overflow: hidden;
     min-width: 100px;
     font-family: 'Courier New', Courier, monospace;
-    height: 48px; /* Hauteur uniforme avec le bouton switch */
+    height: 48px;
+    /* Hauteur uniforme avec le bouton switch */
 }
 
 /* Barre de progression dans le bouton menu */
@@ -125,7 +79,8 @@ body {
 .dropup-content {
     display: none;
     position: absolute;
-    bottom: 64px; /* 48px (hauteur bouton) + 16px (gap) */
+    bottom: 64px;
+    /* 48px (hauteur bouton) + 16px (gap) */
     right: 0;
     background-color: #f1f1f1;
     min-width: 160px;
@@ -164,6 +119,32 @@ body {
     left: 0;
     object-fit: cover;
     z-index: -1;
+}
+
+/* =========================
+   BANNIÈRE CITATION AVANT SECTION 2
+   ========================= */
+.citation-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 120px;
+    /* Hauteur fixe adaptée à deux lignes */
+    max-height: 120px;
+    /* Empêche la bannière de grandir */
+    background: #1F130D;
+    color: #f1f1f1;
+    text-align: center;
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0 20px;
+    /* Padding horizontal seulement */
+    letter-spacing: 0.05em;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* Cache le texte qui dépasserait */
 }
 
 /* Section 02 */
@@ -234,23 +215,24 @@ body {
 }
 
 /* =========================
-   BANNIÈRE CITATION AVANT SECTION 2
+   SECTIONS HORIZONTALES
    ========================= */
-.citation-banner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    min-height: 120px;           /* Hauteur fixe adaptée à deux lignes */
-    max-height: 120px;           /* Empêche la bannière de grandir */
-    background: #1F130D;
-    color: #f1f1f1;
-    text-align: center;
-    font-family: 'IM Fell DW Pica', serif;
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 0 20px;             /* Padding horizontal seulement */
-    letter-spacing: 0.05em;
-    box-sizing: border-box;
-    overflow: hidden;            /* Cache le texte qui dépasserait */
+.horizontal-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.horizontal-wrapper {
+  display: flex;
+  width: calc(100vw * 2); /* 2 panneaux : s02 et s03 */
+  height: 100vh;
+}
+
+.panel {
+  flex: 0 0 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  /* Ajoute ici d'autres styles si besoin */
 }

@@ -21,15 +21,6 @@
      NAVIGATION PRINCIPALE
      ========================= -->
     <div class="nav-bar">
-        <!-- Bouton switch Article/Oeuvre -->
-        <button class="switch-btn" id="switch-article-oeuvre" aria-label="Basculer entre Article et Oeuvre">
-            <!-- Icône SVG stylisée (suit la couleur du bouton via currentColor) -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                    d="M21 15L17.914 11.914C17.5389 11.5391 17.0303 11.3284 16.5 11.3284C15.9697 11.3284 15.4611 11.5391 15.086 11.914L6 21M5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3ZM11 9C11 10.1046 10.1046 11 9 11C7.89543 11 7 10.1046 7 9C7 7.89543 7.89543 7 9 7C10.1046 7 11 7.89543 11 9Z"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-        </button>
 
         <!-- Menu déroulant principal -->
         <div class="dropup">
@@ -54,33 +45,49 @@
     <div class="citation-banner" id="typewriter-effect">
         Art is not a thing<br>it is a way
     </div>
-    <section id="s02">
-        <div class="PhotoEdgarPlusTexteIntro">
-            <div class="PhotoElbert"><img src="./images/PhotoEdgar-removebg-preview.png" alt=""> </div>
-            <div class="TexteIntro" data-aos="fade-right" data-aos-duration="1000">
-                <p id="TexteElbert"> <span class="h2">Elbert Hubbard</span> observed in 1908 in what became one of
-                    history’s finest definitions
-                    of art. Hubbard was writing at the dawn of an unusual new art form, wherein artists were
-                    appropriating a new thing — a trailblazing technology — to find a new way of making art.</p>
-            </div>
+    <!-- Début du scroll horizontal entre s02 et s03 -->
+    <section class="horizontal-section">
+        <div class="horizontal-wrapper">
+            <section id="s02" class="panel">
+                <!-- Contenu de la section 2 -->
+                <div class="PhotoEdgarPlusTexteIntro">
+                    <div class="PhotoElbert"><img src="./images/PhotoEdgar-removebg-preview.png" alt=""> </div>
+                    <div class="TexteIntro" data-aos="fade-right" data-aos-duration="1000">
+                        <p id="TexteElbert"> <span class="h2">Elbert Hubbard</span> observed in 1908 in what became one of
+                            history’s finest definitions
+                            of art. Hubbard was writing at the dawn of an unusual new art form, wherein artists were
+                            appropriating a new thing — a trailblazing technology — to find a new way of making art.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="s03" class="panel">
+                <!-- Contenu de la section 3 -->
+                <div class="OeuvreLookingForwardPlusTexte">
+                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"
+                        class="PhotoLookingForward"><img src="./images/oeuvres/LookingForward.jpg" alt=""> </div>
+                    <div class="TexteLookingForward" id="typewriter-lookingforward"> <span class="h2">Looking Forward<br>by
+                            Leslie
+                            Nichols<br>(2010)</span><br>Trained as a traditional
+                        painter, Nichols now combines texts with images to create mixed-media landscapes and portraits. Her
+                        typewriter text portraits are driven by a desire to understand different facets of women’s rights and
+                        identity as well as her place, and sense of womanhood, in her own community. Nichols creates large-scale
+                        text pieces with hand-stamped oil-based inks and stenciled graphite; smaller, more intimate pieces are
+                        produced entirely with a manual typewriter.</div>
+                </div>
+            </section>
         </div>
     </section>
-    <section id="s03">
-        <div class="OeuvreLookingForwardPlusTexte">
-            <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"
-                class="PhotoLookingForward"><img src="./images/oeuvres/LookingForward.jpg" alt=""> </div>
-            <div class="TexteLookingForward" id="typewriter-lookingforward"> <span class="h2">Looking Forward<br>by
-                    Leslie
-                    Nichols<br>(2010)</span><br>Trained as a traditional
-                painter, Nichols now combines texts with images to create mixed-media landscapes and portraits. Her
-                typewriter text portraits are driven by a desire to understand different facets of women’s rights and
-                identity as well as her place, and sense of womanhood, in her own community. Nichols creates large-scale
-                text pieces with hand-stamped oil-based inks and stenciled graphite; smaller, more intimate pieces are
-                produced entirely with a manual typewriter.</div>
-        </div>
+    <!-- Fin du scroll horizontal -->
+
+    <!-- Le reste du site continue ici -->
+    <section id="s04">
+        <!-- ... -->
     </section>
+
     <script src="https://cdn.jsdelivr.net/npm/scrolly-video@0.0.2/dist/scrolly-video.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 </body>
 

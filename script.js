@@ -104,6 +104,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
       observer.observe(typewriterTarget);
   });
+
+  // Scroll horizontal entre s02 et s03
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".horizontal-wrapper", {
+      x: () => -(document.querySelector(".horizontal-wrapper").scrollWidth - window.innerWidth),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".horizontal-section",
+        start: "top top",
+        end: () => "+=" + document.querySelector(".horizontal-wrapper").scrollWidth,
+        scrub: true,
+        pin: true,
+        anticipatePin: 1
+      }
+    });
+  }
 });
 
 // Initialisation de AOS (le script doit être inclus dans le HTML)
