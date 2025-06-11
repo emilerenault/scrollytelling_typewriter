@@ -1,3 +1,6 @@
+/* =========================
+   1. RESET & FOND GLOBAL
+   ========================= */
 body {
     margin: 0;
     padding: 0;
@@ -6,28 +9,25 @@ body {
 }
 
 /* =========================
-   BARRE DE NAVIGATION FIXE EN BAS
+   2. MENU FIXE EN BAS
    ========================= */
-.nav-bar {
+.menu-fixed-bottom {
+    display: none;
+    /* caché par défaut */
     position: fixed;
-    display: ;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
-    display: flex;
     align-items: center;
-    gap: 16px;
-    /* Espace entre les boutons */
 }
 
 .dropup {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-/* =========================
-   BOUTON MENU PRINCIPAL
-   ========================= */
 .dropbtn {
     position: relative;
     background-color: #ffffff;
@@ -42,10 +42,8 @@ body {
     min-width: 100px;
     font-family: 'Courier New', Courier, monospace;
     height: 48px;
-    /* Hauteur uniforme avec le bouton switch */
 }
 
-/* Barre de progression dans le bouton menu */
 .dropbtn .progress-bar {
     position: absolute;
     left: 0;
@@ -57,30 +55,15 @@ body {
     transition: width 0.1s linear;
 }
 
-/* Texte du bouton menu au-dessus de la barre de progression */
 .dropbtn span {
     position: relative;
     z-index: 1;
 }
 
-/* =========================
-   MENU DÉROULANT (DROPUUP)
-   ========================= */
-.dropup {
-    position: static;
-    /* Important : plus de fixed ici */
-    display: flex;
-    flex-direction: row;
-    /* Pour que le bouton menu reste horizontal */
-    align-items: center;
-}
-
-/* Dropup content (Hidden by Default) */
 .dropup-content {
     display: none;
     position: absolute;
     bottom: 64px;
-    /* 48px (hauteur bouton) + 16px (gap) */
     right: 0;
     background-color: #f1f1f1;
     min-width: 160px;
@@ -89,7 +72,6 @@ body {
     border: #000000 solid 1px;
 }
 
-/* Links inside the dropup */
 .dropup-content a {
     color: black;
     padding: 12px 16px;
@@ -99,30 +81,32 @@ body {
     font-size: 20px;
 }
 
-/* Show the dropup menu on hover */
 .dropup:hover .dropup-content {
     display: block;
 }
 
-/* Section 01 */
+/* =========================
+   3. SCROLLY VIDEO SECTION
+   ========================= */
 #s01 {
     height: 300vh;
+    /* ou la hauteur souhaitée pour l'effet scrolly */
     position: relative;
 }
 
-/* Conteneur pour la vidéo */
 #scrolly-video {
-    width: auto;
-    height: 300vh;
     position: fixed;
     top: 0;
     left: 0;
-    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
+    /* ou un z-index assez bas pour ne pas masquer le contenu */
+    object-fit: cover;
 }
 
 /* =========================
-   BANNIÈRE CITATION AVANT SECTION 2
+   4. BANNIÈRE CITATION
    ========================= */
 .citation-banner {
     display: flex;
@@ -130,9 +114,7 @@ body {
     justify-content: center;
     width: 100vw;
     min-height: 120px;
-    /* Hauteur fixe adaptée à deux lignes */
     max-height: 120px;
-    /* Empêche la bannière de grandir */
     background: #1F130D;
     color: #f1f1f1;
     text-align: center;
@@ -140,58 +122,85 @@ body {
     font-size: 2rem;
     font-weight: bold;
     padding: 0 20px;
-    /* Padding horizontal seulement */
     letter-spacing: 0.05em;
     box-sizing: border-box;
     overflow: hidden;
-    /* Cache le texte qui dépasserait */
 }
 
-/* Section 02 */
-.PhotoEdgarPlusTexteIntro {
+/* =========================
+   5. SECTION 02 : ELBERT HUBBARD
+   ========================= */
+
+
+.PhotoElbertPlusTexteIntro {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 16px;
-    grid-row-gap: 0px;
+    opacity: 0;
+    transition: opacity 0.8s;
+}
+
+.PhotoElbertPlusTexteIntro.visible {
+    opacity: 1;
 }
 
 .PhotoElbert {
     grid-area: 1 / 1 / 2 / 3;
-    padding-top: 180%;
+    padding-top: 35vh;
     margin: 0;
-    height: 10%;
+    height: 463px;
     width: auto;
 }
 
 .TexteIntro {
     grid-area: 1 / 2 / 2 / 5;
-    margin: 20px;
+    /* commence à la colonne 3, finit à la 5 */
+    height: fit-content;
+    /* haut | droite | bas | gauche */
+    padding: 24px;
+    width: fit-content;
+    /* largeur auto selon le contenu */
+    align-self: start;
+    justify-self: start;
 }
 
-#TexteElbert {
-    border: 3px solid black;
-    padding: 7%;
-    display: inline-block;
-    font-size: 16px;
-    backdrop-filter: blur(20px)
-}
 
 .h2 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 32px;
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 40px;
     font-weight: bold;
     text-align: left;
+    line-height: 95.3%;
 }
 
-/* Section 03 */
+.elbert-title {
+    font-family: 'IM Fell DW Pica', serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 16px;
+    /* espace entre titre et texte */
+    line-height: 1;
+    margin-top: 0;
+}
+
+.elbert-text {
+    font-size: 16px;
+    margin-bottom: 0%;
+    font-weight: regular;
+}
+
+/* =========================
+   6. SECTION 03 : OEUVRE LOOKING FORWARD
+   ========================= */
 .OeuvreLookingForwardPlusTexte {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     grid-row-gap: 10px;
     margin: 20px;
-    margin-top: 200px;
+
 }
 
 .PhotoLookingForward {
@@ -215,24 +224,26 @@ body {
 }
 
 /* =========================
-   SECTIONS HORIZONTALES
+   7. SCROLL HORIZONTAL ENTRE S02 ET S03
    ========================= */
 .horizontal-section {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .horizontal-wrapper {
-  display: flex;
-  width: calc(100vw * 2); /* 2 panneaux : s02 et s03 */
-  height: 100vh;
+    display: flex;
+    width: calc(100vw * 2);
+    /* 2 panneaux : s02 et s03 */
+    height: 100vh;
 }
 
 .panel {
-  flex: 0 0 100vw;
-  height: 100vh;
-  box-sizing: border-box;
-  /* Ajoute ici d'autres styles si besoin */
+    flex: 0 0 100vw;
+    height: auto;
+    min-height: 100vh;
+    /* Pour garder un minimum d'écran si tu veux */
+    box-sizing: border-box;
 }

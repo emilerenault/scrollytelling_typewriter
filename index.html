@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A visual history of typewriter</title>
+
+    <!-- Feuilles de style principales et polices -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/oms8kyr.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,20 +17,21 @@
 </head>
 
 <body>
-    <div class="progress"></div>
     <!-- =========================
-     NAVIGATION PRINCIPALE
-     ========================= -->
-    <div class="nav-bar">
+         1. Barre de progression globale (en haut de page)
+    ========================= -->
+    <div class="progress"></div>
 
-        <!-- Menu déroulant principal -->
+    <!-- =========================
+         2. Menu de navigation fixe en bas de page
+         (Apparaît à partir de la section 2)
+    ========================= -->
+    <div class="menu-fixed-bottom">
         <div class="dropup">
-            <!-- Bouton Menu avec barre de progression -->
             <button class="dropbtn" id="menu-btn">
                 <div class="progress-bar" id="progress-bar"></div>
                 <span>Menu</span>
             </button>
-            <!-- Contenu du menu déroulant -->
             <div class="dropup-content">
                 <a href="#">Chapitre 1</a>
                 <a href="#">Chapitre 2</a>
@@ -37,49 +39,48 @@
             </div>
         </div>
     </div>
+
+    <!-- =========================
+         3. Section vidéo scrolly (plein écran)
+    ========================= -->
     <section id="s01">
-        <!-- Conteneur pour la Scrolly Video -->
         <div id="scrolly-video"></div>
     </section>
-    <!-- Carré noir citation avant la section 2 -->
-    <div class="citation-banner" id="typewriter-effect">
-        Art is not a thing<br>it is a way
-    </div>
-    <!-- Début du scroll horizontal entre s02 et s03 -->
+
+
+    <!-- =========================
+         5. Sections horizontales (scroll horizontal)
+         - Section 2 : Elbert Hubbard (photo + texte)
+         - Section 3 : Looking Forward (œuvre + texte)
+    ========================= -->
     <section class="horizontal-section">
         <div class="horizontal-wrapper">
+            <!-- SECTION 2 : Elbert Hubbard -->
             <section id="s02" class="panel">
-                <!-- Contenu de la section 2 -->
-                <div class="PhotoEdgarPlusTexteIntro">
-                    <div class="PhotoElbert"><img src="./images/PhotoEdgar-removebg-preview.png" alt=""> </div>
-                    <div class="TexteIntro" data-aos="fade-right" data-aos-duration="1000">
-                        <p id="TexteElbert"> <span class="h2">Elbert Hubbard</span> observed in 1908 in what became one of
-                            history’s finest definitions
-                            of art. Hubbard was writing at the dawn of an unusual new art form, wherein artists were
-                            appropriating a new thing — a trailblazing technology — to find a new way of making art.</p>
+                <div class="citation-banner" id="typewriter-effect">
+                    Art is not a thing<br>it is a way
+                </div>
+                <div class="PhotoElbertPlusTexteIntro">
+                    <div class="PhotoElbert">
+                        <img src="./images/PhotoEdgar-removebg-preview.png" alt="Portrait Elbert Hubbard">
+                    </div>
+                    <div class="TexteIntro">
+                        <h2 class="elbert-title">Elbert Hubbard</h2>
+                        <p class="elbert-text">
+                            observed in <strong>1908</strong> in what became one of history’s finest definitions of art. Hubbard was writing at
+                            the dawn of <strong>an unusual new art form</strong>, where artists were appropriating a new thing, a trailblazing technology to find
+                            <strong>a new way of making art</strong>.
+                        </p>
                     </div>
                 </div>
             </section>
+            <!-- SECTION 3 : Looking Forward -->
             <section id="s03" class="panel">
-                <!-- Contenu de la section 3 -->
-                <div class="OeuvreLookingForwardPlusTexte">
-                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"
-                        class="PhotoLookingForward"><img src="./images/oeuvres/LookingForward.jpg" alt=""> </div>
-                    <div class="TexteLookingForward" id="typewriter-lookingforward"> <span class="h2">Looking Forward<br>by
-                            Leslie
-                            Nichols<br>(2010)</span><br>Trained as a traditional
-                        painter, Nichols now combines texts with images to create mixed-media landscapes and portraits. Her
-                        typewriter text portraits are driven by a desire to understand different facets of women’s rights and
-                        identity as well as her place, and sense of womanhood, in her own community. Nichols creates large-scale
-                        text pieces with hand-stamped oil-based inks and stenciled graphite; smaller, more intimate pieces are
-                        produced entirely with a manual typewriter.</div>
-                </div>
-            </section>
-        </div>
-    </section>
-    <!-- Fin du scroll horizontal -->
-
-    <!-- Le reste du site continue ici -->
+                <div class="oeuvre-looking-forward-plus-texte OeuvreLookingForwardPlusTexte">
+                    <div class="photo-looking-forward PhotoLookingForward">
+    <!-- =========================
+     SECTION 04 : AUTRES CONTENUS
+     ========================= -->
     <section id="s04">
         <!-- ... -->
     </section>
@@ -92,3 +93,7 @@
 </body>
 
 </html>
+
+<style>
+
+</style>

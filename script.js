@@ -12,122 +12,129 @@ if (window.ScrollyVideo) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Sélection des éléments
-  const dropup = document.querySelector(".dropup");
-  const switchBtn = document.getElementById("switch-article-oeuvre");
-  const section2 = document.getElementById("s02");
-  const menuBtn = document.getElementById("menu-btn");
-  const dropupContent = document.querySelector(".dropup-content");
-  const progressBar = document.getElementById('progress-bar');
-
-  function toggleMenuButtons() {
-    if (!section2 || !dropup || !switchBtn) return;
-    const section2Top = section2.getBoundingClientRect().top + window.scrollY;
-    const triggerScroll = section2Top - window.innerHeight / 2;
-
-    if (window.scrollY >= triggerScroll) {
-      dropup.style.display = "flex";
-      switchBtn.style.display = "flex";
-    } else {
-      dropup.style.display = "none";
-      switchBtn.style.display = "none";
-      if (dropupContent) dropupContent.style.display = "none";
-    }
-  }
-
-  window.addEventListener("scroll", toggleMenuButtons);
-  toggleMenuButtons();
-
-  // Progression dans le bouton Menu
-  window.addEventListener('scroll', function() {
-    if (!progressBar || !section2) return;
-    const section2Top = section2.getBoundingClientRect().top + window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight - section2Top;
-    const scrollTop = window.scrollY - section2Top;
-    let progress = (scrollTop / docHeight) * 100;
-    progress = Math.max(0, Math.min(100, progress));
-    progressBar.style.width = progress + '%';
-  });
-
-  // Toggle du menu déroulant au clic sur le bouton menu
+  // =========================
+  // 1. MENU DROPDOWN
+  // =========================
+  const menuBtn = document.getElementById('menu-btn');
+  const dropupContent = document.querySelector('.dropup-content');
   if (menuBtn && dropupContent) {
-    menuBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      if (dropupContent.style.display === "block") {
-        dropupContent.style.display = "none";
-      } else {
-        dropupContent.style.display = "block";
-      }
-    });
-
-    // Fermer le menu si on clique ailleurs
-    document.addEventListener('click', function (e) {
-      if (!dropupContent.contains(e.target) && e.target !== menuBtn) {
-        dropupContent.style.display = "none";
-      }
-    });
+      menuBtn.addEventListener('click', function (e) {
+          dropupContent.style.display = dropupContent.style.display === "block" ? "none" : "block";
+          e.stopPropagation();
+      });
+      document.addEventListener('click', function (e) {
+          if (!dropupContent.contains(e.target) && e.target !== menuBtn) {
+              dropupContent.style.display = "none";
+          }
+      });
   }
 
-  // Toggle effet bouton switch
-  if (switchBtn) {
-    switchBtn.addEventListener('click', function() {
-      switchBtn.classList.toggle('active');
-    });
+
+  // =========================
+  // 3. GSAP SCROLL HORIZONTAL ENTRE S02 ET S03
+  // =========================
+  if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.to(".horizontal-wrapper", {
+          x: () => -(document.querySelector(".horizontal-wrapper").scrollWidth - window.innerWidth),
+          ease: "none",
+          scrollTrigger: {
+              trigger: ".horizontal-section",
+              start: "top top",
+              end: () => "+=" + document.querySelector(".horizontal-wrapper").scrollWidth,
+              scrub: true,
+              pin: true,
+              anticipatePin: 1
+          }
+      });
   }
 
-  // Fonction typewriter qui conserve le style HTML
-  function typeWriterHTML(element, html, i, speed = 70) {
-      if (i <= html.length) {
-          element.innerHTML = html.slice(0, i);
-          i++;
-          setTimeout(() => typeWriterHTML(element, html, i, speed), speed);
-      }
-  }
-
-  // Applique l'effet typewriter à tous les éléments avec la classe ou l'id "typewriter-effect"
-  document.querySelectorAll('#typewriter-effect, .typewriter-effect').forEach(typewriterTarget => {
-      const originalHTML = typewriterTarget.innerHTML;
-      typewriterTarget.innerHTML = ""; // Vide le conteneur
-
-      let typewriterStarted = false;
-
-      // Observer pour déclencher l'effet quand l'élément devient visible
-      const observer = new IntersectionObserver(function(entries, observer) {
-          entries.forEach(entry => {
-              if (entry.isIntersecting && !typewriterStarted) {
-                  typewriterStarted = true;
-                  typeWriterHTML(typewriterTarget, originalHTML, 0, 70); // 70ms par caractère
-                  observer.disconnect();
-              }
-          });
-      }, { threshold: 0.2 }); // 20% du bloc visible
-
-      observer.observe(typewriterTarget);
+  // =========================
+  // 5. BARRE DE PROGRESSION GLOBALE
+  // =========================
+  window.addEventListener('scroll', function() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      const globalProgress = document.querySelector('.progress');
+      if (globalProgress) globalProgress.style.width = progress + '%';
   });
 
-  // Scroll horizontal entre s02 et s03
-  if (window.gsap && window.ScrollTrigger) {
-    gsap.registerPlugin(ScrollTrigger);
+  // =========================
+  // 6. TOGGLE MENU BUTTON VISIBILITY
+  // =========================
+  const menuFixed = document.querySelector('.menu-fixed-bottom');
+  const section2 = document.getElementById('s02');
 
-    gsap.to(".horizontal-wrapper", {
-      x: () => -(document.querySelector(".horizontal-wrapper").scrollWidth - window.innerWidth),
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".horizontal-section",
-        start: "top top",
-        end: () => "+=" + document.querySelector(".horizontal-wrapper").scrollWidth,
-        scrub: true,
-        pin: true,
-        anticipatePin: 1
+  function toggleMenuBtnVisibility() {
+      if (!menuFixed || !section2) return;
+      const section2Top = section2.getBoundingClientRect().top + window.scrollY;
+      if (window.scrollY + window.innerHeight > section2Top) {
+          menuFixed.style.display = "flex";
+      } else {
+          menuFixed.style.display = "none";
       }
-    });
   }
+
+  window.addEventListener('scroll', toggleMenuBtnVisibility);
+  toggleMenuBtnVisibility(); // Pour l'état initial au chargement
+
+  // =========================
+  // TYPEWRITER EFFECT BANNIERE (synchronisé au scroll)
+  // =========================
+  const banner = document.getElementById('typewriter-effect');
+  const bannerText = "Art is not a thing<br>it is a way";
+  const bannerTextPlain = "Art is not a thing\nit is a way"; // Pour le calcul sans balises HTML
+  const intro = document.querySelector('.PhotoElbertPlusTexteIntro');
+
+  function typewriterOnScroll() {
+      if (!banner) return;
+      const bannerRect = banner.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      // Commence l'effet quand la bannière entre dans le viewport
+      if (bannerRect.top < windowHeight && bannerRect.bottom > 0) {
+          // Pourcentage de scroll sur la bannière
+          const percent = Math.min(1, Math.max(0, 1 - bannerRect.top / windowHeight));
+          const totalChars = bannerTextPlain.length;
+          const charsToShow = Math.floor(percent * totalChars);
+
+          // Reconstruit le texte avec le <br>
+          let displayText = bannerTextPlain.slice(0, charsToShow)
+              .replace('\n', '<br>');
+          banner.innerHTML = displayText;
+
+          // Affiche le bloc suivant uniquement si tout le texte est écrit
+          if (charsToShow >= totalChars) {
+              if (intro) intro.classList.add('visible');
+          }
+          // On ne retire plus la classe ici !
+      } else if (bannerRect.bottom <= 0) {
+          // Si la bannière est complètement sortie par le haut, on ne fait rien (le bloc reste visible)
+          banner.innerHTML = bannerText; // Affiche le texte complet si besoin
+      } else {
+          // Si on remonte et que la bannière n'est plus dans le viewport (trop haut), efface le texte et masque le bloc suivant
+          banner.innerHTML = "";
+          if (intro) intro.classList.remove('visible');
+      }
+  }
+
+  window.addEventListener('scroll', typewriterOnScroll);
+  typewriterOnScroll(); // Pour l'état initial
 });
 
-// Initialisation de AOS (le script doit être inclus dans le HTML)
-if (window.AOS) {
-  AOS.init();
-}
+// Barre de progression dans le bouton Menu
+window.addEventListener('scroll', function() {
+  const section2 = document.getElementById("s02");
+  const progressBar = document.getElementById('progress-bar');
+  if (!progressBar || !section2) return;
+  const section2Top = section2.getBoundingClientRect().top + window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight - section2Top;
+  const scrollTop = window.scrollY - section2Top;
+  let progress = (scrollTop / docHeight) * 100;
+  progress = Math.max(0, Math.min(100, progress));
+  progressBar.style.width = progress + '%';
+});
+
 
 // Barre de progression globale (si besoin)
 window.addEventListener('scroll', function() {
