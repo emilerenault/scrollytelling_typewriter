@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 if (window.ScrollyVideo) {
   new ScrollyVideo({
     scrollyVideoContainer: "scrolly-video-00", // ID du conteneur de S00
-    src: "./assets/videos/Test_scroll_horizontal.mp4", // Chemin vers ta vidéo S00
+    src: "./assets/videos/Galerie_V1.mp4", // Chemin vers ta vidéo S00
   });
 }
 
@@ -186,6 +186,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// Dropdown menu
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Ferme le dropdown si on clique ailleurs
+window.onclick = function(event) {
+  if (!event.target.closest('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 
 
 

@@ -3,7 +3,7 @@
 @import url('layout.css');
 @import url('book.css');
 
-/* Chapter 1 title */
+/* HEADER Chapter 1 title */
 .chapter-1-title {
     display: flex;
     width: 100%;
@@ -27,7 +27,7 @@
     letter-spacing: 1px;
 }
 
-/* Chapter 2 title */
+/* HEADER Chapter 2 title */
 .chapter-2-title {
     display: flex;
     width: 100%;
@@ -49,4 +49,71 @@
     font-size: 2.5rem;
     text-align: center;
     letter-spacing: 1px;
+}
+
+/* Row qui prend toute la largeur et s'adapte à la hauteur du bouton */
+.row-dropdown {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* Centrer le bouton si tu veux */
+    align-items: center;
+    margin-top: 24px;
+    /* Espace au-dessus si besoin */
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.svg-btn-icon {
+  width: 50px;
+  height: 51px;
+  display: block;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center; /* Aligne verticalement le bouton et le menu */
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  position: absolute;
+  left: 100%;      /* Place le menu à droite du bouton */
+  top: 0;          /* Aligne le haut du menu avec le haut du bouton */
+  min-width: 160px;
+  background-color: #701414;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  display: none;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    font-family: 'VeteranTypewriter', monospace;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu */
+.show {
+    display: block;
 }
