@@ -1,0 +1,119 @@
+@import url('base.css');
+@import url('layout.css');
+@import url('components.css');
+@import url('book.css');
+
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Pour Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* ----------------------- CH1 /CHAPTER 1 : INTO THE TYPE/ CH1 ----------------------- */
+/* S02 /ELBERT HUBBARD/ S02 */
+
+#s02 {
+  background-color: white;
+}
+
+/* citation-banner */
+.citation-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #1F130D;
+  color: #fff;
+  text-align: left;
+  font-family: 'IM Fell DW Pica', serif;
+  letter-spacing: 0.10em;
+  padding: 3vh;
+  padding-left: 6.15vh;
+  min-height: 179px;
+}
+
+
+.citation-banner-line1 {
+  font-size: 40px;
+  display: block;
+  margin-bottom: -10px;
+  /* espacement entre les deux lignes */
+
+}
+
+.citation-banner-line2 {
+  font-size: 71px;
+  display: block;
+}
+
+.guillemets-hauts-container {
+  position: absolute;
+  top: -6vw;
+  /* ajuste selon le débordement souhaité */
+  left: 6vw;
+  display: flex;
+  gap: 2vw;
+  /* espace entre les deux guillemets */
+  z-index: 10;
+}
+
+.guillemets-bas-container {
+  position: absolute;
+  bottom: -6vw;
+  /* ajuste selon le débordement souhaité */
+  right: 6vw;
+  display: flex;
+  gap: 2vw;
+  /* espace entre les deux guillemets */
+  z-index: 10;
+}
+
+/* encadré texte elbert */
+.texte-Elbert {
+  background: rgba(255, 255, 255, 0.1);
+  /* fond semi-transparent */
+  backdrop-filter: blur(50px);
+  /* effet de flou */
+  -webkit-backdrop-filter: blur(50px);
+  /* support Safari */
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 8px;
+  border-bottom: #1F130D 2px solid;
+  border-left: #1F130D 2px solid;
+  border-top: #1F130D 2px solid;
+}
+
+/* S03 /TYPEWRITER ART: A MODERN ANTHOLOGY/ S03*/
+.texte-3dBook {
+  background: rgba(255, 255, 255, 0.1);
+  /* fond semi-transparent */
+  backdrop-filter: blur(50px);
+  /* effet de flou */
+  -webkit-backdrop-filter: blur(50px);
+  /* support Safari */
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 8px;
+  border-bottom: #1F130D 2px solid;
+  border-right: #1F130D 2px solid;
+  border-top: #1F130D 2px solid;
+}
+
+/* ----------------------- CH2 /CHAPTER 2 : MECHANICAL BODY/ CH2 ----------------------- */
+/* S04 /MECHANICAL BODY/ S04*/
+#s04 {
+background-color: #fcfcfb;
+}
+

@@ -1,0 +1,194 @@
+@import url('book.css');
+@import url('main.css');
+@import url('layout.css');
+@import url('components.css');
+
+:root {
+  --color-bg-header: #fff;
+  --color-bg-footer: #eee;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --------- POLICES --------- */
+
+/* MomsTypewriter pour les titrage du chapitre 1 pour le texte courant regular */
+@font-face {
+  font-family: 'MomsTypewriter';
+  src: url('../assets/fonts/mom_regular_macroman/Moms_typewriter-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* VeteranTypewriter pour les titrage du chapitre 2 pour le texte courant regular */
+@font-face {
+  font-family:'VeteranTpewriter';
+  src: url('../assets/fonts/Veteran Typewriter/Veteran Typewriter.woff2') format('woff2'),
+    url('../assets/fonts/Veteran Typewriter/Veteran Typewriter.woff') format('woff');
+  src: url();
+}
+
+/* Adelphe Germinal pour le texte courant regular */
+@font-face {
+  font-family: 'Adelphe';
+  src: url('../assets/fonts/adelphe/Adelphe-GerminalRegular.woff2') format('woff2'),
+    url('../assets/fonts/adelphe/Adelphe-GerminalRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Adelphe Germinal Bold pour le texte courant bold */
+@font-face {
+  font-family: 'Adelphe';
+  src: url('../assets/fonts/adelphe/Adelphe-GerminalBold.woff2') format('woff2'),
+    url('../assets/fonts/adelphe/Adelphe-GerminalBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Texte par défaut */
+body,
+.text-base {
+  font-family: 'Adelphe', serif !important;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.text-md {
+  font-size: 16px;
+}
+
+.text-lg {
+  font-size: 18px;
+}
+
+.text-xl {
+  font-size: 20px;
+}
+
+.text-2xl {
+  font-size: 24px;
+}
+
+.text-3xl {
+  font-size: 32px;
+}
+
+.text-4xl {
+  font-size: 40px;
+}
+
+.text-5xl {
+  font-size: 48px;
+}
+
+/* Variantes bold pour le texte courant */
+.text-base-bold {
+  font-family: 'Adelphe', serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.text-xs-bold {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.text-sm-bold {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.text-md-bold {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.text-lg-bold {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.text-xl-bold {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.text-2xl-bold {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.text-3xl-bold {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.text-4xl-bold {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.text-5xl-bold {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+/* MomsTypewriter pour le heading de la s02*/
+.h1-imfell {
+  font-family: 'MomsTypewriter', serif;
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 1.15;
+}
+
+.h2-imfell {
+  font-family: 'MomsTypewriter', serif;
+  font-size: 36px;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.h3-imfell {
+  font-family: 'MomsTypewriter', serif;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1.25;
+}
+
+.h4-imfell {
+  font-family: 'MomsTypewriter', serif;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 1.3;
+}
+
+.h5-imfell {
+  font-family: 'MomsTypewriter', serif;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.35;
+}
+
+.h6-imfell {
+  font-family: 'MomsTypewriter', serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.4;
+}

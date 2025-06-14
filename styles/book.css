@@ -1,0 +1,259 @@
+@import url('base.css');
+@import url('main.css');
+@import url('layout.css');
+@import url('components.css');
+
+.book3d-align,
+.book3d-align ul,
+.book3d-align li {
+    list-style: none !important;
+}
+
+.book3d-align {
+    clear: both;
+    width: 90%;
+    text-align: center;
+    list-style: none;
+}
+
+.book3d-align>li {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: auto;
+    min-height: 0;
+}
+
+.book3d-book {
+    position: relative;
+    width: 160px;
+    height: 220px;
+    perspective: 2000px;
+    transform-style: preserve-3d;
+}
+
+/* HARDCOVER FRONT */
+.book3d-hardcover-front li:first-child {
+    background-image: url('https://i0.wp.com/www.themarginalian.org/wp-content/uploads/2014/05/typewriterart.jpg?w=680&ssl=1');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+}
+
+.book3d-hardcover-front li:last-child,
+.book3d-hardcover-back li:first-child,
+.book3d-hardcover-back li:last-child {
+    background: #fffbec;
+}
+
+/* HARDCOVER BACK */
+.book3d-hardcover-back li:first-child {
+    background: #fffbec;
+}
+
+.book3d-hardcover-back li:last-child {
+    background: #fffbec;
+}
+
+.book3d-spine li:first-child {
+    background: #eee;
+}
+
+.book3d-spine li:last-child {
+    background: #333;
+}
+
+/* Pages */
+.book3d-page>li {
+    background: linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
+    box-shadow: inset 0px -1px 2px rgba(50, 50, 50, 0.1), inset -1px 0px 1px rgba(150, 150, 150, 0.2);
+    border-radius: 0px 5px 5px 0px;
+}
+
+/* 3D transforms */
+.book3d-hardcover-front {
+    transform: rotateY(-34deg) translateZ(8px);
+    z-index: 100;
+}
+
+.book3d-hardcover-back {
+    transform: rotateY(-15deg) translateZ(-8px);
+}
+
+.book3d-page li:nth-child(1) {
+    transform: rotateY(-28deg);
+}
+
+.book3d-page li:nth-child(2) {
+    transform: rotateY(-30deg);
+}
+
+.book3d-page li:nth-child(3) {
+    background-image: url('../assets/images/PageTR2.jpg');
+    /* adapte le chemin si besoin */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-transform: rotateY(-32deg);
+    -moz-transform: rotateY(-32deg);
+    transform: rotateY(-32deg);
+}
+
+.book3d-page li:nth-child(4) {
+    background-image: url('../assets/images/PageTR1.jpg');
+    /* adapte le chemin si besoin */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-transform: rotateY(-34deg);
+    -moz-transform: rotateY(-34deg);
+    transform: rotateY(-34deg);
+
+}
+
+.book3d-page li:nth-child(5) {
+    transform: rotateY(-36deg);
+}
+
+.book3d-hardcover-front,
+.book3d-hardcover-back,
+.book3d-spine,
+.book3d-hardcover-front li,
+.book3d-hardcover-back li,
+.book3d-spine li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 120%;
+    transform-style: preserve-3d;
+}
+
+.book3d-hardcover-front,
+.book3d-hardcover-back {
+    transform-origin: 0% 100%;
+    transition: all 0.8s ease, z-index 0.6s;
+}
+
+.book3d-hardcover-front li:first-child {
+    cursor: default;
+    user-select: none;
+    transform: translateZ(2px);
+}
+
+.book3d-hardcover-front li:last-child {
+    transform: rotateY(180deg) translateZ(2px);
+}
+
+.book3d-hardcover-back li:first-child {
+    transform: translateZ(2px);
+}
+
+.book3d-hardcover-back li:last-child {
+    transform: translateZ(-2px);
+}
+
+/* Spine */
+.book3d-spine {
+    transform: rotateY(60deg) translateX(-5px) translateZ(-12px);
+    width: 16px;
+    z-index: 0;
+}
+
+.book3d-spine li:first-child {
+    transform: translateZ(2px);
+}
+
+.book3d-spine li:last-child {
+    transform: translateZ(-2px);
+}
+
+/* Pages */
+.book3d-page,
+.book3d-page>li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+}
+
+.book3d-page {
+    width: 148%;
+    height: 142%;
+    top: 1%;
+    left: 3%;
+    z-index: 10;
+}
+
+.book3d-page>li {
+    width: 100%;
+    height: 100%;
+    transform-origin: left center;
+    transition-property: transform;
+    transition-timing-function: ease;
+}
+
+.book3d-page>li:nth-child(1) {
+    transition-duration: 0.6s;
+}
+
+.book3d-page>li:nth-child(2) {
+    transition-duration: 0.6s;
+}
+
+.book3d-page>li:nth-child(3) {
+    transition-duration: 0.4s;
+}
+
+.book3d-page>li:nth-child(4) {
+    transition-duration: 0.5s;
+}
+
+.book3d-page>li:nth-child(5) {
+    transition-duration: 0.6s;
+}
+
+/* Animation ouverture */
+.book3d-book.open>.book3d-hardcover-front {
+    transform: rotateY(-145deg) translateZ(0);
+    z-index: 0;
+}
+
+.book3d-book.open>.book3d-page li:nth-child(1) {
+    transform: rotateY(-30deg);
+    transition-duration: 1.5s;
+}
+
+.book3d-book.open>.book3d-page li:nth-child(2) {
+    transform: rotateY(-35deg);
+    transition-duration: 1.8s;
+}
+
+.book3d-book.open>.book3d-page li:nth-child(3) {
+    transform: rotateY(-118deg);
+    transition-duration: 1.6s;
+}
+
+.book3d-book.open>.book3d-page li:nth-child(4) {
+    transform: rotateY(-130deg);
+    transition-duration: 1.4s;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .book3d-align>li {
+        width: 100%;
+        min-height: 440px;
+        height: auto;
+        padding: 0;
+        margin: 0 0 30px 0;
+    }
+
+    .book3d-book {
+        margin: 0 auto;
+    }
+}
+

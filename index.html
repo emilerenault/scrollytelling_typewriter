@@ -2,98 +2,140 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A visual history of typewriter</title>
-
-    <!-- Feuilles de style principales et polices -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.typekit.net/oms8kyr.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Chewy&family=IM+Fell+DW+Pica:ital@0;1&family=Knewave&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Visual History of Typewriter</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- Polices -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- =========================
-         1. Barre de progression globale (en haut de page)
-    ========================= -->
-    <div class="progress"></div>
-
-    <!-- =========================
-         2. Menu de navigation fixe en bas de page
-         (Apparaît à partir de la section 2)
-    ========================= -->
-    <div class="menu-fixed-bottom">
-        <div class="dropup">
-            <button class="dropbtn" id="menu-btn">
-                <div class="progress-bar" id="progress-bar"></div>
-                <span>Menu</span>
-            </button>
-            <div class="dropup-content">
-                <a href="#">Chapitre 1</a>
-                <a href="#">Chapitre 2</a>
-                <a href="#">Chapitre 3</a>
-            </div>
-        </div>
+  <!-- S00 /VIDEO GALERIE/ S00 -->
+  <section id="s00">
+    <div id="scrolly-video-00" class="scrolly-video">
+      <video src="./assets/videos/Test_scroll_horizontal.mp4" muted></video>
     </div>
+  </section>
+  <!-- S01 /VIDEO INTRODUCTION TYPEWRITER/ S01 -->
+  <section id="s01">
+    <div id="scrolly-video" class="scrolly-video">
+      <video src="./assets/videos/intro_typewriter_v1.3-12s.mp4" muted></video>
+    </div>
+  </section>
+  <!----------------------- CH1 /CHAPTER 1 : INTO THE TYPE/ CH1 ----------------------->
+  <!-- S02 /ELBERT HUBBARD/ S02 -->
+  <section id="s02">
+    <div class="s02-grid">
+      <div class="chapter-1-title">
+        <img src="./assets/svg/chapter1-asset.svg" alt="Titre Chapitre 1" class="chapter-1-title__svg" />
+        <div class="chapter-1-title__text">Into the type</div>
+      </div>
+      <div class="elbert-texte-image">
+        <div class="texte-Elbert">
+          <h1 class="h4-imfell">Elbert<br>Hubbard</h1>
+          <p class="text-base">observed in <span class="text-base-bold">1908</span> in what became one of history’s
+            finest definitions of art. Hubbard was writing at the dawn of an unusual <span class="text-base-bold">new
+              art form</span>, where in artists were
+            appropriating a new thing  a trailblazing technology to find <span class="text-base-bold">a new way of
+              making art.</span></p>
+        </div>
+        <img src="./assets/images/elbert_hubbard.png" alt="elbert-hubbard-picture" class="elbert-hubbard-image">
+      </div>
+      <!-- citation-banner -->
+      <div class="citation-banner" id="typewriter-effect">
+        <div class="guillemets-hauts-container">
+          <img src="./assets/svg/guillemet_haut.svg" alt="Guillemet décoratif">
+          <img src="./assets/svg/guillemet_haut.svg" alt="Guillemet décoratif">
+        </div>
+        <div class="guillemets-bas-container">
+          <img src="./assets/svg/guillemet_bas.svg" alt="Guillemet décoratif">
+          <img src="./assets/svg/guillemet_bas.svg" alt="Guillemet décoratif">
+        </div>
+        <span class="citation-banner-line1"></span>
+        <span class="citation-banner-line2"></span>
+      </div>
+    </div>
+  </section>
+  <!-- S03 /TYPEWRITER ART: A MODERN ANTHOLOGY/ S03 -->
+  <section class="horizontal-section">
+    <div class="horizontal-wrapper">
+      <section id="s03">
+        <div class="s03-grid">
+          <div class="book3d-book">
+            <ul class="book3d-align">
+              <li>
+                <figure class="book3d-book">
+                  <!-- Front -->
+                  <ul class='book3d-hardcover-front'>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <!-- Pages -->
+                  <ul class='book3d-page'>
+                    <li></li>
+                    <li>
+                      <p style="margin: 20px; font-size: 12px; text-align: left;">
+                        The product and legacy of that is what graphic design scholar Barrie Tullett explores in
+                        Typewriter
+                        Art: A Modern Anthology (public library) a fascinating chronicle of “the development of the
+                        typewriter
+                        as a medium for creating work far beyond anything envisioned by the machine’s makers,” embedded
+                        in
+                        which is a beautiful allegory for how all technology is eventually co-opted as an unforeseen
+                        canvas
+                        for art and political statement.
+                      </p>
+                      <p>Barrie Tullett</p>
+                    </li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <!-- Back -->
+                  <ul class='book3d-hardcover-back'>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class='book3d-spine'>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </figure>
+              </li>
+            </ul>
+          </div>
+          <div class="texte-3dBook">
+            <h1 class="h5-imfell">Typewriter Art<br>A Modern Anthology</h1>
+            <p class="text-base">Barrie Tullett shows how the typewriter became a tool for creative and political
+              expression, far beyond its original purpose.</p>
+          </div>
+        </div>
+      </section>
+      <!----------------------- CH2 /CHAPTER 2 : MECHANICAL BODY/ CH2 ----------------------->
+      <!-- S04 /Mechanical body/ S04 -->
+      <section id="s04">
+        <div class="s04-grid">
+          <div class="chapter-2-title"><img src="./assets/svg/chapter2-asset.svg" alt="Titre Chapitre 2"
+              class="chapter-2-title__svg" />
+            <div class="chapter-2-title__text" data-fulltext="Mechanical body"></div>
+          </div>
+          <video class="video-brevet" src="./assets/videos/AnimBrevet.mp4" muted loop autoplay></video>
+        </div>
+      </section>
+    </div>
+  </section>
 
-    <!-- =========================
-         3. Section vidéo scrolly (plein écran)
-    ========================= -->
-    <section id="s01">
-        <div id="scrolly-video"></div>
-    </section>
 
 
-    <!-- =========================
-         5. Sections horizontales (scroll horizontal)
-         - Section 2 : Elbert Hubbard (photo + texte)
-         - Section 3 : Looking Forward (œuvre + texte)
-    ========================= -->
-    <section class="horizontal-section">
-        <div class="horizontal-wrapper">
-            <!-- SECTION 2 : Elbert Hubbard -->
-            <section id="s02" class="panel">
-                <div class="citation-banner" id="typewriter-effect">
-                    Art is not a thing<br>it is a way
-                </div>
-                <div class="PhotoElbertPlusTexteIntro">
-                    <div class="PhotoElbert">
-                        <img src="./images/PhotoEdgar-removebg-preview.png" alt="Portrait Elbert Hubbard">
-                    </div>
-                    <div class="TexteIntro">
-                        <h2 class="elbert-title">Elbert Hubbard</h2>
-                        <p class="elbert-text">
-                            observed in <strong>1908</strong> in what became one of history’s finest definitions of art. Hubbard was writing at
-                            the dawn of <strong>an unusual new art form</strong>, where artists were appropriating a new thing, a trailblazing technology to find
-                            <strong>a new way of making art</strong>.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <!-- SECTION 3 : Looking Forward -->
-            <section id="s03" class="panel">
-                <div class="oeuvre-looking-forward-plus-texte OeuvreLookingForwardPlusTexte">
-                    <div class="photo-looking-forward PhotoLookingForward">
-    <!-- =========================
-     SECTION 04 : AUTRES CONTENUS
-     ========================= -->
-    <section id="s04">
-        <!-- ... -->
-    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/scrolly-video@0.0.2/dist/scrolly-video.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+
+  <!-- Ajout de la bibliothèque ScrollyVideo -->
+  <script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 
 </html>
-
-<style>
-
-</style>
