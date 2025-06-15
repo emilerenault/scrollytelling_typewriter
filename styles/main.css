@@ -4,19 +4,6 @@
 @import url('book.css');
 
 
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #fff;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Pour Chrome, Edge, Safari */
-body::-webkit-scrollbar {
-  display: none;
-}
 
 /* ----------------------- CH1 /CHAPTER 1 : INTO THE TYPE/ CH1 ----------------------- */
 /* S02 /ELBERT HUBBARD/ S02 */
@@ -31,28 +18,30 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: #1F130D;
+  background: var(--color-primary);
   color: #fff;
-  text-align: left;
-  font-family: 'IM Fell DW Pica', serif;
+  justify-content: center;
+  align-items: center;
+  font-family: 'MomsTypewriter', serif;
   letter-spacing: 0.10em;
-  padding: 3vh;
-  padding-left: 6.15vh;
-  min-height: 179px;
+  min-height: 145px;
+  padding: 5.1vw 5.1vw 5.1vw 10.3vw;
+  box-sizing: border-box;
 }
 
-
 .citation-banner-line1 {
-  font-size: 40px;
+  font-size: 24px;
   display: block;
-  margin-bottom: -10px;
-  /* espacement entre les deux lignes */
-
+  margin-bottom: 5px;
+  align-self: flex-start;
+  text-align: left;
 }
 
 .citation-banner-line2 {
-  font-size: 71px;
+  font-size: 40px;
   display: block;
+  align-self: flex-start;
+  text-align: left;
 }
 
 .guillemets-hauts-container {
@@ -116,4 +105,5 @@ body::-webkit-scrollbar {
 #s04 {
 background-color: #fcfcfb;
 }
+
 

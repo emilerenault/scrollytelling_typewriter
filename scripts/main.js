@@ -1,4 +1,4 @@
-// Redirection automatique vers #s01 au chargement de la page si pas de hash dans l'URL
+/* Redirection automatique vers #s01 au chargement de la page si pas de hash dans l'URL
 document.addEventListener("DOMContentLoaded", function () {
   // Si on est sur la page d'accueil ou si le hash est #s00, scroll vers #s01
   if (location.hash === "#s00" || !location.hash) {
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
       history.replaceState(null, null, "#s01");
     }
   }
-});
+});*/
 
 // S00 /SCROLLY VIDEO SUPPLÉMENTAIRE/
 if (window.ScrollyVideo) {
@@ -192,18 +192,74 @@ function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Ferme le dropdown si on clique ailleurs
-window.onclick = function(event) {
-  if (!event.target.closest('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
+// Animation GSAP pour le gear-dropdown
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdownBtn = document.querySelector('.dropbtn');
+  const dropdownIcon = dropdownBtn.querySelector('.svg-btn-icon');
+  const dropdownContent = document.getElementById('myDropdown');
+
+  // Initial state
+  gsap.set(dropdownContent, {height: 0, opacity: 0, display: "none", overflow: "hidden"});
+  gsap.set(dropdownIcon, {rotate: 0, transformOrigin: "50% 50%"});
+
+  window.toggleDropdown = function() {
+    const isOpen = dropdownContent.classList.contains('show');
+    if (!isOpen) {
+      dropdownContent.classList.add('show');
+      gsap.set(dropdownContent, {display: "block"});
+      // Rotation sur soi-même (centre)
+      gsap.to(dropdownIcon, {
+        rotate: 180,
+        duration: 0.5,
+        ease: "expo.inOut"
+      });
+      gsap.to(dropdownContent, {
+        height: "auto",
+        opacity: 1,
+        duration: 0.5,
+        ease: "expo.inOut"
+      });
+    } else {
+      gsap.to(dropdownIcon, {
+        rotate: 0,
+        duration: 0.4,
+        ease: "expo.inOut"
+      });
+      gsap.to(dropdownContent, {
+        height: 0,
+        opacity: 0,
+        duration: 0.4,
+        ease: "expo.inOut",
+        onComplete: () => {
+          dropdownContent.classList.remove('show');
+          gsap.set(dropdownContent, {display: "none"});
+        }
+      });
+    }
+  };
+
+  window.addEventListener('click', function(event) {
+    if (!event.target.closest('.dropdown')) {
+      if (dropdownContent.classList.contains('show')) {
+        gsap.to(dropdownIcon, {
+          rotate: 0,
+          duration: 0.4,
+          ease: "expo.inOut"
+        });
+        gsap.to(dropdownContent, {
+          height: 0,
+          opacity: 0,
+          duration: 0.4,
+          ease: "expo.inOut",
+          onComplete: () => {
+            dropdownContent.classList.remove('show');
+            gsap.set(dropdownContent, {display: "none"});
+          }
+        });
       }
     }
-  }
-}
+  });
+});
 
 
 
