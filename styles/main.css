@@ -28,7 +28,9 @@
   padding: 5.1vw 5.1vw 5.1vw 10.3vw;
   box-sizing: border-box;
 }
-
+.image.guillemets-svg {
+  color: #fff;
+}
 .citation-banner-line1 {
   font-size: 24px;
   display: block;
@@ -104,6 +106,11 @@
 /* S04 /MECHANICAL BODY/ S04*/
 #s04 {
 background-color: #fcfcfb;
+}
+ /* video anim brevet */
+.animbrevet {
+  pointer-events: none;      /* Empêche tout clic ou interaction */
+  user-select: none;         /* Empêche la sélection du contenu */
 }
 
 

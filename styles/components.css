@@ -51,57 +51,50 @@
     letter-spacing: 1px;
 }
 
-/* Row qui prend toute la largeur et s'adapte à la hauteur du bouton */
-.row-dropdown {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    /* Centrer le bouton si tu veux */
-    align-items: center;
-    margin-top: 24px;
-    /* Espace au-dessus si besoin */
-}
+
 
 /* Dropdown Button S04 MECHANICAL BODY */
-.dropbtn {
-background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.svg-btn-icon {
-  width: 50px;
-  height: 51px;
-  display: block;
+.gear-dropbtn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.gear-svg-btn-icon {
+    width: 50px;
+    height: 51px;
+    display: block;
+}
 
 /* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: flex;
-  align-items: center; /* Aligne verticalement le bouton et le menu */
+.gear-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* Aligne verticalement le bouton et le menu */
 }
 
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  position: absolute;
-  left: 72%;      /* Place le menu à droite du bouton */
-  top: 0;          /* Aligne le haut du menu avec le haut du bouton */
-  min-width: 300px;
-  background-color: var(--color-primary);
-  z-index: 1;
-  display: none;
-  padding: 20px;
-  overflow: hidden;
+.gear-dropdown-content {
+    position: absolute;
+    left: 52%;
+    /* Place le menu à droite du bouton */
+    top: 0;
+    /* Aligne le haut du menu avec le haut du bouton */
+    min-width: 300px;
+    background-color: var(--color-primary);
+    z-index: 1;
+    display: none;
+    padding: 20px;
+    overflow: hidden;
 
 }
 
-.dropdown-content h1 {
+.gear-dropdown-content h1 {
     font-family: 'VeteranTypewriter', monospace;
     color: rgb(255, 255, 255);
     text-decoration: none;
@@ -110,8 +103,9 @@ background: transparent;
     padding-bottom: 12px;
 
 }
+
 /* Links inside the dropdown */
-.dropdown-content p {
+.gear-dropdown-content p {
     color: rgb(255, 255, 255);
     text-decoration: none;
     display: block;
@@ -124,7 +118,7 @@ background: transparent;
     display: block;
 }
 
-.dropdown-content h2 {
+.gear-dropdown-content h2 {
     font-family: 'VeteranTypewriter', monospace;
     color: rgb(255, 255, 255);
     text-decoration: none;

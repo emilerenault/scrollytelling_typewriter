@@ -19,7 +19,7 @@ if (window.ScrollyVideo) {
     src: "./assets/videos/Galerie_V1.mp4", // Chemin vers ta vidéo S00
   });
 }
-
+//----------------------- CH1 /CHAPTER 1 : INTO THE TYPE/ CH1  -----------------------
 // S01 /VIDEO INTRODUCTION TYPEWRITER/ S01
 if (window.ScrollyVideo) {
   new ScrollyVideo({
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
+// S03 /LIVRE 3D/ S03
 // Livre 3D
 document.addEventListener("DOMContentLoaded", function () {
     const book = document.querySelector('.book3d-book figure.book3d-book');
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
     checkScroll();
 });
 
-// SCROLL HORIZONTAL GSAP
+// SCROLL HORIZONTAL GSAP ENTRE S03 ET S04
 document.addEventListener("DOMContentLoaded", function () {
   if (window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
@@ -187,15 +187,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Dropdown menu
+//----------------------- CH2 /CHAPTER 2 : MECHANICAL BODY/ CH2  -----------------------
+// S04 MECHANICAL BODY
+// Gear dropdown button 
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
 // Animation GSAP pour le gear-dropdown
 document.addEventListener('DOMContentLoaded', () => {
-  const dropdownBtn = document.querySelector('.dropbtn');
-  const dropdownIcon = dropdownBtn.querySelector('.svg-btn-icon');
+  const dropdownBtn = document.querySelector('.gear-dropbtn');
+  const dropdownIcon = dropdownBtn.querySelector('.svg-gear-btn-icon');
   const dropdownContent = document.getElementById('myDropdown');
 
   // Initial state
@@ -239,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.addEventListener('click', function(event) {
-    if (!event.target.closest('.dropdown')) {
+    if (!event.target.closest('.gear-dropdown')) {
       if (dropdownContent.classList.contains('show')) {
         gsap.to(dropdownIcon, {
           rotate: 0,
