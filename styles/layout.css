@@ -97,6 +97,8 @@ body {
   justify-content: flex-start;
   /* Place le contenu en haut */
   margin-top: 48px;
+  z-index: 2;
+  position: relative;
 }
 
 .s03-grid {
@@ -115,12 +117,15 @@ body {
 
 .book3d-book {
   grid-column: 2 / 5;
+  margin: 20px;
 }
 
 .horizontal-section {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  position: relative;
+  z-index: 2;
   position: relative;
 }
 
@@ -141,14 +146,13 @@ body {
 /* ----------------------- CH2 /CHAPTER 2 : MECHANICAL BODY/ CH2 ----------------------- */
 /* S04 /MECHANICAL BODY/ S04*/
 #s04 {
-  display: flex;
-  flex-direction: column;
   height: auto;
   width: 100vw;
   align-items: flex-start;
   justify-content: flex-start;
-  padding-top: 60px;
-  border-left: var(--color-primary) 1px solid;
+  position: relative;
+  min-height: 0;
+  box-sizing: border-box;
 }
 
 .s04-grid {
@@ -157,10 +161,12 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-row: auto;
   position: relative;
+  border-left: var(--color-primary) 1px solid;
+  padding-top: 60px;
 }
 
 .chapter-2-title {
-  grid-column: 1 / -1;
+  grid-column: 1 / 5;
   /* Prend toute la largeur de la grille */
   grid-row: 1;
   /* Première ligne */
@@ -174,22 +180,22 @@ body {
   position: relative;
   width: 100vw;
   height: auto;
-  margin-bottom: 48px;
+  margin-bottom: 30px;
 }
 
 .gear-dropdown {
-  position: relative;
-  grid-column: 1;
-  grid-row: 3;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  top: 56vh;
+  left: 20px;
 }
 
 .beginningOfASuccess-text {
   grid-row: 4;
   grid-column: 2 / 5;
+  z-index: 10000;
 }
 
 .dropdown {
@@ -207,4 +213,43 @@ body {
   /* Place le menu à gauche du bouton */
   z-index: 10;
   /* Ajoute ton style habituel (fond, ombre, etc.) */
+}
+
+/* S05 /WOMAN TYPING/ S05*/
+#s05 {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  position: relative;
+  z-index: 10;
+  align-items: flex-start;
+}
+
+.s05-grid {
+  height: auto;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  grid-auto-rows: auto;
+
+  padding-top: 12.5vh;
+  padding-bottom: 6vh;
+  z-index: 10;
+}
+
+.video-woman-typing {
+  grid-column: 1 / 5;
+  /* toute la largeur */
+  grid-row: 1;
+  position: relative;
+  width: 100vw;
+  height: auto;
+  display: flex;
+  grid-row: auto;
+}
+
+#s06 {
+  height: 100vh;
+  width: 100vw;
 }

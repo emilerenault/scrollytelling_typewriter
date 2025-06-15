@@ -1,4 +1,4 @@
-/* Redirection automatique vers #s01 au chargement de la page si pas de hash dans l'URL
+// Redirection automatique vers #s01 au chargement de la page si pas de hash dans l'URL
 document.addEventListener("DOMContentLoaded", function () {
   // Si on est sur la page d'accueil ou si le hash est #s00, scroll vers #s01
   if (location.hash === "#s00" || !location.hash) {
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
       history.replaceState(null, null, "#s01");
     }
   }
-});*/
+});
 
 // S00 /SCROLLY VIDEO SUPPLÉMENTAIRE/
 if (window.ScrollyVideo) {
@@ -148,41 +148,37 @@ document.addEventListener("DOMContentLoaded", function () {
   if (window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
 
-    const wrapper = document.querySelector('.horizontal-wrapper');
-    if (!wrapper) return;
+    document.querySelectorAll('.horizontal-section').forEach(horizontalSection => {
+      const wrapper = horizontalSection.querySelector('.horizontal-wrapper');
+      if (!wrapper) return;
 
-    // Correction : calcule le nombre de sections et adapte la hauteur de la section horizontale
-    const sectionCount = wrapper.children.length;
-    const horizontalSection = document.querySelector('.horizontal-section');
-    if (horizontalSection) {
-      horizontalSection.style.height = `${window.innerHeight * sectionCount}px`;
-    }
-
-    function getScrollAmount() {
-      return -(wrapper.scrollWidth - window.innerWidth);
-    }
-
-    const tween = gsap.to(wrapper, {
-      x: getScrollAmount,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".horizontal-section",
-        start: "top top",
-        end: () => `+=${getScrollAmount() * -1}`,
-        pin: true,
-        scrub: 1,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-        // markers: true
+      function getScrollAmount() {
+        return -(wrapper.scrollWidth - window.innerWidth);
       }
-    });
 
-    // Recalcule à chaque resize
-    window.addEventListener('resize', () => {
-      if (horizontalSection) {
-        horizontalSection.style.height = `${window.innerHeight * sectionCount}px`;
-      }
-      ScrollTrigger.refresh();
+      // Hauteur adaptée pour chaque scroll horizontal
+      horizontalSection.style.height = `${window.innerHeight + Math.abs(getScrollAmount())}px`;
+
+      gsap.to(wrapper, {
+        x: getScrollAmount,
+        ease: "none",
+        scrollTrigger: {
+          trigger: horizontalSection,
+          start: "top top",
+          end: () => `+=${getScrollAmount() * -1}`,
+          pin: true,
+          scrub: 1,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          // markers: true
+        }
+      });
+
+      // Recalcule à chaque resize
+      window.addEventListener('resize', () => {
+        horizontalSection.style.height = `${window.innerHeight + Math.abs(getScrollAmount())}px`;
+        ScrollTrigger.refresh();
+      });
     });
   }
 });

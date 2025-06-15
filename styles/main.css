@@ -104,13 +104,37 @@
 
 /* ----------------------- CH2 /CHAPTER 2 : MECHANICAL BODY/ CH2 ----------------------- */
 /* S04 /MECHANICAL BODY/ S04*/
-#s04 {
-background-color: #fcfcfb;
-}
  /* video anim brevet */
 .animbrevet {
   pointer-events: none;      /* Empêche tout clic ou interaction */
   user-select: none;         /* Empêche la sélection du contenu */
 }
 
+.s04-grid {
+background-color: #fcfcfb;
+}
 
+/* S05 /WOMAN TYPING/ S05*/
+.s05-grid {
+  background-color: #fcfcfb;
+}
+
+.citation-banner-s05 {
+  grid-column: 1/ 5;
+  grid-row: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--color-primary);
+  color: #fff;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 145px;
+  padding: 30px 24px 30px 24px;
+  box-sizing: border-box;
+}
+
+#s06 {
+  background-color: #969605;
+}
