@@ -51,6 +51,38 @@
     letter-spacing: 1px;
 }
 
+/* encadré texte elbert */
+.text-Elbert {
+    background: rgba(255, 255, 255, 0.1);
+    /* fond semi-transparent */
+    backdrop-filter: blur(50px);
+    /* effet de flou */
+    -webkit-backdrop-filter: blur(50px);
+    /* support Safari */
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 8px;
+    border-bottom: #1F130D 2px solid;
+    border-left: #1F130D 2px solid;
+    border-top: #1F130D 2px solid;
+}
+
+.beginningOfASuccess-text {
+    background: rgba(255, 255, 255, 0.1);
+    /* fond semi-transparent */
+    backdrop-filter: blur(50px);
+    /* effet de flou */
+    -webkit-backdrop-filter: blur(50px);
+    /* support Safari */
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 8px;
+    border-bottom: #1F130D 2px solid;
+    border-left: #1F130D 2px solid;
+    border-top: #1F130D 2px solid;
+}
 
 
 /* Dropdown Button S04 MECHANICAL BODY */
@@ -70,35 +102,26 @@
     display: block;
 }
 
-
-
 /* Dropdown Content (Hidden by Default) */
 .gear-dropdown-content {
-    position: absolute;
-    left: 10%;
-    /* Place le menu à droite du bouton */
-    top: 0;
     /* Aligne le haut du menu avec le haut du bouton */
-    min-width: 300px;
+    min-width: 280px;
     background-color: var(--color-primary);
     z-index: 1;
     display: none;
     padding: 20px;
     overflow: hidden;
-
 }
 
-.gear-dropdown-content h1 {
-    font-family: 'VeteranTypewriter', monospace;
+/*dropdown content*/
+
+.gear-dropdown-content h2 {
     color: rgb(255, 255, 255);
     text-decoration: none;
     display: block;
-    font-size: 24px;
     padding-bottom: 12px;
-
 }
 
-/* Links inside the dropdown */
 .gear-dropdown-content p {
     color: rgb(255, 255, 255);
     text-decoration: none;
@@ -112,12 +135,3 @@
     display: block;
 }
 
-.gear-dropdown-content h2 {
-    font-family: 'VeteranTypewriter', monospace;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    display: block;
-    font-size: 18px;
-    padding-top: 12px;
-    text-align: right;
-}

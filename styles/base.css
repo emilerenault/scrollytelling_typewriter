@@ -7,7 +7,6 @@
   --color-bg-header: #fff;
   --color-bg-footer: #eee;
   --color-primary: #1a1a1a;
-  --color-secondary: #E1B833;
 }
 
 *,
@@ -154,43 +153,36 @@ body,
 }
 
 /* MomsTypewriter pour le heading de la s02*/
-.h1-imfell {
-  font-family: 'MomsTypewriter', serif;
+.h1 {
   font-size: 40px;
   font-weight: normal;
   line-height: 1.15;
 }
 
-.h2-imfell {
-  font-family: 'MomsTypewriter', serif;
-  font-size: 36px;
+.h2{
+  font-size: 24px;
   font-weight: normal;
-  line-height: 1.2;
 }
 
-.h3-imfell {
-  font-family: 'MomsTypewriter', serif;
+.h3 {
   font-size: 30px;
   font-weight: normal;
   line-height: 1.25;
 }
 
-.h4-imfell {
-  font-family: 'MomsTypewriter', serif;
+.h4 {
   font-size: 24px;
   font-weight: normal;
   line-height: 1.3;
 }
 
-.h5-imfell {
-  font-family: 'MomsTypewriter', serif;
+.h5- {
   font-size: 20px;
   font-weight: normal;
   line-height: 1.35;
 }
 
-.h6-imfell {
-  font-family: 'MomsTypewriter', serif;
+.h6 {
   font-size: 16px;
   font-weight: normal;
   line-height: 1.4;

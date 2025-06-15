@@ -200,7 +200,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const dropdownIcon = dropdownBtn.querySelector('.svg-gear-btn-icon');
   const dropdownContent = document.getElementById('myDropdown');
 
-  // Initial state
   gsap.set(dropdownContent, {height: 0, opacity: 0, display: "none", overflow: "hidden"});
   gsap.set(dropdownIcon, {rotate: 0, transformOrigin: "50% 50%"});
 
@@ -209,7 +208,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isOpen) {
       dropdownContent.classList.add('show');
       gsap.set(dropdownContent, {display: "block"});
-      // Rotation sur soi-même (centre)
       gsap.to(dropdownIcon, {
         rotate: 180,
         duration: 0.5,
@@ -241,7 +239,10 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.addEventListener('click', function(event) {
-    if (!event.target.closest('.gear-dropdown')) {
+    if (
+      !event.target.closest('.gear-dropdown-content') &&
+      !event.target.closest('.gear-dropbtn')
+    ) {
       if (dropdownContent.classList.contains('show')) {
         gsap.to(dropdownIcon, {
           rotate: 0,
