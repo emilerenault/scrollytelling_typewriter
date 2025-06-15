@@ -263,6 +263,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Lazy load vidéo quand elle entre dans le viewport
+document.addEventListener('DOMContentLoaded', () => {
+  const videos = document.querySelectorAll('video[preload="none"]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const video = entry.target;
+        if (!video.src) {
+          const source = video.querySelector('source');
+          video.src = source.getAttribute('src');
+        }
+        observer.unobserve(video);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  videos.forEach(video => observer.observe(video));
+});
+
 
 
 
