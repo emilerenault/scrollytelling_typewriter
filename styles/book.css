@@ -97,7 +97,7 @@
 }
 
 .book3d-page li:nth-child(3) {
-    background-image: url('../assets/images/PageTR2.jpg');
+    background-image: url('../assets/images/PageTR2.webp');
     /* adapte le chemin si besoin */
     background-size: cover;
     background-position: center;
@@ -109,7 +109,7 @@
 }
 
 .book3d-page li:nth-child(4) {
-    background-image: url('../assets/images/PageTR1.jpg');
+    background-image: url('../assets/images/PageTR1.webp');
     /* adapte le chemin si besoin */
     background-size: cover;
     background-position: center;

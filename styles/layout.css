@@ -189,13 +189,13 @@ body {
   justify-content: center;
   align-items: center;
   top: 56vh;
-  left: 20px;
+  margin-left: 24px;
 }
 
 .beginningOfASuccess-text {
   grid-row: 4;
   grid-column: 2 / 5;
-  z-index: 10000;
+  z-index: 1;
 }
 
 .dropdown {

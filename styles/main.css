@@ -109,12 +109,17 @@
   pointer-events: none;      /* Empêche tout clic ou interaction */
   user-select: none;         /* Empêche la sélection du contenu */
 }
-
+#s04 {
+  background-color: #fcfcfb;
+}
 .s04-grid {
 background-color: #fcfcfb;
 }
 
 /* S05 /WOMAN TYPING/ S05*/
+#s05 {
+background-color: #fcfcfb;
+}
 .s05-grid {
   background-color: #fcfcfb;
 }
