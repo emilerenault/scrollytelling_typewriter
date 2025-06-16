@@ -19,6 +19,8 @@
 
 /* --------- POLICES --------- */
 
+@import url('https://fonts.cdnfonts.com/css/elegant-typewriter');
+
 /* MomsTypewriter pour les titrage du chapitre 1 pour le texte courant regular */
 @font-face {
   font-family: 'MomsTypewriter';

@@ -232,7 +232,6 @@ body {
   grid-template-columns: repeat(4, 1fr);
   position: relative;
   grid-auto-rows: auto;
-
   padding-top: 12.5vh;
   padding-bottom: 6vh;
   z-index: 10;
@@ -249,7 +248,31 @@ body {
   grid-row: auto;
 }
 
+/* ----------------------- CH3 /CHAPTER 3 : MECHANICAL BODY/ CH3 ----------------------- */
+/* S06 /FIRST KEYSTROKE/ S06*/
 #s06 {
   height: 100vh;
   width: 100vw;
+  align-items: flex-start;
+}
+
+.s06-grid {
+  height: auto;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  grid-auto-rows: auto;
+  padding-top: 60px;
+}
+
+.chapter-3-title {
+  grid-column: 1/5;
+  grid-row: 1;
+  display: flex;
+  width: 100%;
+  padding: 10px 20px;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 64px;
 }
