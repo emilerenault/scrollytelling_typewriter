@@ -403,8 +403,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// ajout images cliquables
 
-
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.toggle-img-on-click').forEach(function(img) {
+    const originalSrc = img.getAttribute('src');
+    const newSrc = img.getAttribute('data-new-src');
+    img.addEventListener('click', function() {
+      if (img.getAttribute('src') === originalSrc) {
+        img.setAttribute('src', newSrc);
+      } else {
+        img.setAttribute('src', originalSrc);
+      }
+    });
+  });
+});
 
 
 
