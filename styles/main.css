@@ -153,6 +153,112 @@
 
 
 #s09 {
-  background-color: #f400f4;
+  background-color: #ffffff;
   border-left: var(--color-primary) 1px solid;
+}
+
+#s10 img {
+  width: 100vw;
+  max-width: 100vw;
+  height: auto;
+  display: block;
+  margin: 30px auto;
+  object-fit: cover;
+}
+
+.home-button-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.home-button-link img {
+  width: 30%;
+}
+
+
+/* Footer dans la derniere zone */
+.site-footer {
+  background-color: #1b1313;
+  color: #fff;
+  width: 100%;
+  padding: 32px;
+  font-family: 'IM Fell DW Pica', serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: underline;
+  display: block;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+.footer-links a:hover {
+  color: #b39ddb;
+}
+
+.footer-block h3 {
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  text-decoration: underline;
+}
+
+.typography-list, .gallery-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.typography-list li,
+.gallery-list li {
+  margin-bottom: 6px;
+  line-height: 1.4;
+  font-size: 0.95em;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* ligne blanche semi-transparente */
+}
+
+.typography-list li:last-child,
+.gallery-list li:last-child {
+  border-bottom: none; /* pas de ligne après le dernier élément */
+}
+
+.typo-icon {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-right: 4px;
+}
+
+small {
+  display: block;
+  font-size: 0.8em;
+  color: #ccc;
+  margin-left: 24px;
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    padding: 20px;
+    font-size: 0.95em;
+  }
+}
+
+.linkedin-icon {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  margin-top: 10px;
+  filter: brightness(0) invert(1); /* pour l'icône blanche sur fond noir */
+  display: inline-block;
 }
