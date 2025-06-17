@@ -17,7 +17,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
   background: var(--color-primary);
   color: #fff;
   justify-content: center;
@@ -28,9 +28,11 @@
   padding: 5.1vw 5.1vw 5.1vw 10.3vw;
   box-sizing: border-box;
 }
-.imageguillemets-svg {
+
+.guillemets-svg {
   color: #fff;
 }
+
 .citation-banner-line1 {
   font-size: 24px;
   display: block;
@@ -80,9 +82,9 @@
   flex-direction: column;
   padding: 24px;
   gap: 8px;
-  border-bottom: #1F130D 2px solid;
-  border-left: #1F130D 2px solid;
-  border-top: #1F130D 2px solid;
+  border-bottom: #1F130D 3px solid;
+  border-left: #1F130D 3px solid;
+  border-top: #1F130D 3px solid;
 }
 
 /* S03 /TYPEWRITER ART: A MODERN ANTHOLOGY/ S03*/
@@ -97,29 +99,35 @@
   flex-direction: column;
   padding: 24px;
   gap: 8px;
-  border-bottom: #1F130D 2px solid;
-  border-right: #1F130D 2px solid;
-  border-top: #1F130D 2px solid;
+  border-bottom: #1F130D 3px solid;
+  border-right: #1F130D 3px solid;
+  border-top: #1F130D 3px solid;
 }
 
 /* ----------------------- CH2 /CHAPTER 2 : MECHANICAL BODY/ CH2 ----------------------- */
 /* S04 /MECHANICAL BODY/ S04*/
- /* video anim brevet */
+/* video anim brevet */
 .animbrevet {
-  pointer-events: none;      /* Empêche tout clic ou interaction */
-  user-select: none;         /* Empêche la sélection du contenu */
+  pointer-events: none;
+  /* Empêche tout clic ou interaction */
+  user-select: none;
+  /* Empêche la sélection du contenu */
 }
+
 #s04 {
   background-color: #fcfcfb;
 }
+
 .s04-grid {
-background-color: #fcfcfb;
+  background-color: #fcfcfb;
 }
 
 /* S05 /WOMAN TYPING/ S05*/
 #s05 {
-background-color: #fcfcfb;
+  background-color: #fcfcfb;
+  border-left: var(--color-primary) 1px solid;
 }
+
 .s05-grid {
   background-color: #fcfcfb;
 }
@@ -130,13 +138,25 @@ background-color: #fcfcfb;
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
   background: var(--color-primary);
   color: #fff;
   align-items: flex-start;
   justify-content: flex-start;
-  min-height: 145px;
   padding: 30px 24px 30px 24px;
   box-sizing: border-box;
+  gap: 8px;
 }
 
+#s07 {
+  border-left: var(--color-primary) 3px solid;
+}
+
+#s08 {
+  background-color: #00f42d;
+  border-left: var(--color-primary) 1px solid;
+}
+
+#s09 {
+  background-color: #f400f4;
+  border-left: var(--color-primary) 1px solid;
+}

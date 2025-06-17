@@ -1,17 +1,12 @@
-@import url('base.css');
-@import url('main.css');
-@import url('layout.css');
-@import url('book.css');
-
 /* HEADER Chapter 1 title */
 .chapter-1-title {
     display: flex;
-    width: 100%;
-    padding: 10px 20px;
+    width: 100vw;
+    padding: 0px 24px;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    margin-bottom: 64px;
+    margin-bottom: 52px;
 }
 
 .chapter-1-title__svg {
@@ -30,12 +25,12 @@
 /* HEADER Chapter 2 title */
 .chapter-2-title {
     display: flex;
-    width: 100%;
-    padding: 10px 20px;
+    width: 100vw;
+    padding: 0px 24px;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    margin-bottom: 64px;
+    margin-bottom: 52px;
 }
 
 .chapter-2-title__svg {
@@ -54,12 +49,11 @@
 /* HEADER Chapter 3 title */
 .chapter-3-title {
     display: flex;
-    width: 100%;
-    padding: 10px 20px;
+    width: 100vw;
+    padding: 0px 24px;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    margin-bottom: 64px;
 }
 
 .chapter-3-title__svg {
@@ -103,21 +97,18 @@
     flex-direction: column;
     padding: 24px;
     gap: 8px;
-    border-bottom: #1F130D 2px solid;
-    border-left: #1F130D 2px solid;
-    border-top: #1F130D 2px solid;
 }
 
 
 /* Dropdown Button S04 MECHANICAL BODY */
 .gear-dropbtn {
     background: transparent;
-    border: none;
-    padding: 0;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-right: 8px;
+    border: none;
 }
 
 .gear-svg-btn-icon {
@@ -133,7 +124,7 @@
     background-color: var(--color-primary);
     z-index: 10000;
     display: none;
-    padding: 20px;
+    padding: 24px;
     overflow: hidden;
 }
 
@@ -159,3 +150,51 @@
     display: block;
 }
 
+/* Dropdown pour TheOriginalArtTypingPieceElements */
+.art-dropdown {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.art-dropbtn {
+  background-color: var(--color-primary, #1F130D);
+  width: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 8px 0;
+}
+
+.svg-art-btn-icon {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.art-dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-width: 220px;
+  z-index: 1000;
+  display: none;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.584);
+  /* fond semi-transparent */
+  backdrop-filter: blur(20px);
+  /* effet de flou */
+  -webkit-backdrop-filter: blur(20px);
+  /* support Safari */
+  padding: 24px;
+  gap: 8px;
+  border: #1F130D 3px solid;
+}
+
+.art-dropdown-content.show {
+  display: block;
+}

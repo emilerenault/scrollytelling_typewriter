@@ -121,6 +121,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+// Effet typewriter sur #chapter-3-title__text quand #s06 entre dans le viewport
+document.addEventListener('DOMContentLoaded', () => {
+  const chapterTitle3 = document.querySelector('.chapter-3-title__text');
+  if (!chapterTitle3) return;
+
+  const titleFull3 = chapterTitle3.dataset.fulltext || chapterTitle3.textContent.trim();
+  let animationStarted3 = false;
+
+  // Le texte n'est pas visible au départ
+  chapterTitle3.textContent = "";
+
+  ScrollTrigger.create({
+    trigger: "#s06", // déclencheur = section 6
+    start: "top 80%", // ajuste si besoin
+    end: "bottom top",
+    onEnter: () => {
+      if (!animationStarted3) {
+        animationStarted3 = true;
+        let i = 0;
+        function typeWriter3() {
+          if (i < titleFull3.length) {
+            chapterTitle3.textContent += titleFull3.charAt(i);
+            i++;
+            setTimeout(typeWriter3, 70); // vitesse de frappe
+          }
+        }
+        typeWriter3();
+      }
+    }
+  });
+});
 // S03 /LIVRE 3D/ S03
 // Livre 3D
 document.addEventListener("DOMContentLoaded", function () {
@@ -144,43 +175,39 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // SCROLL HORIZONTAL GSAP ENTRE S03 ET S04
-document.addEventListener("DOMContentLoaded", function () {
-  if (window.gsap && window.ScrollTrigger) {
-    gsap.registerPlugin(ScrollTrigger);
+document.querySelectorAll('.horizontal-section').forEach(horizontalSection => {
+  const wrapper = horizontalSection.querySelector('.horizontal-wrapper');
+  if (!wrapper) return;
 
-    document.querySelectorAll('.horizontal-section').forEach(horizontalSection => {
-      const wrapper = horizontalSection.querySelector('.horizontal-wrapper');
-      if (!wrapper) return;
-
-      function getScrollAmount() {
-        return -(wrapper.scrollWidth - window.innerWidth);
-      }
-
-      // Hauteur adaptée pour chaque scroll horizontal
-      horizontalSection.style.height = `${window.innerHeight + Math.abs(getScrollAmount())}px`;
-
-      gsap.to(wrapper, {
-        x: getScrollAmount,
-        ease: "none",
-        scrollTrigger: {
-          trigger: horizontalSection,
-          start: "top top",
-          end: () => `+=${getScrollAmount() * -1}`,
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-          // markers: true
-        }
-      });
-
-      // Recalcule à chaque resize
-      window.addEventListener('resize', () => {
-        horizontalSection.style.height = `${window.innerHeight + Math.abs(getScrollAmount())}px`;
-        ScrollTrigger.refresh();
-      });
-    });
+  function getScrollAmount() {
+    return -(wrapper.scrollWidth - window.innerWidth);
   }
+  const scrollAmount = Math.abs(getScrollAmount());
+  const minHeight = Math.max(window.innerHeight, scrollAmount + window.innerHeight);
+  horizontalSection.style.height = `${minHeight}px`;
+
+  gsap.to(wrapper, {
+    x: getScrollAmount,
+    ease: "none",
+    scrollTrigger: {
+      trigger: horizontalSection,
+      start: "top top",
+      end: () => `+=${getScrollAmount() * -1}`,
+      pin: true,
+      scrub: 1,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+      // markers: true
+    }
+  });
+
+  // Recalcule à chaque resize
+  window.addEventListener('resize', () => {
+    const scrollAmount = Math.abs(getScrollAmount());
+    const minHeight = Math.max(window.innerHeight, scrollAmount + window.innerHeight);
+    horizontalSection.style.height = `${minHeight}px`;
+    ScrollTrigger.refresh();
+  });
 });
 
 //----------------------- CH2 /CHAPTER 2 : MECHANICAL BODY/ CH2  -----------------------
@@ -260,6 +287,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Animation GSAP de rotation continue et douce du bouton gear
+if (window.gsap) {
+  gsap.to('.svg-gear-btn-icon', {
+    rotation: 360,
+    repeat: -1,
+    ease: "linear",
+    duration: 15, // 4 secondes pour un tour complet, ajuste pour la vitesse
+    transformOrigin: "50% 50%"
+  });
+}
+
 // Lazy load vidéo quand elle entre dans le viewport
 document.addEventListener('DOMContentLoaded', () => {
   const videos = document.querySelectorAll('video[preload="none"]');
@@ -278,6 +316,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
   videos.forEach(video => observer.observe(video));
 });
+
+// Dropdown pour TheOriginalArtTypingPieceElements
+document.addEventListener('DOMContentLoaded', () => {
+  const artDropdownBtn = document.querySelector('.art-dropbtn');
+  const artDropdownContent = document.getElementById('artDropdown');
+
+  window.toggleArtDropdown = function() {
+    if (!artDropdownContent) return;
+    artDropdownContent.classList.toggle('show');
+  };
+
+  // Ferme le dropdown si on clique ailleurs
+  window.addEventListener('click', function(event) {
+    if (
+      !event.target.closest('.art-dropdown-content') &&
+      !event.target.closest('.art-dropbtn')
+    ) {
+      artDropdownContent && artDropdownContent.classList.remove('show');
+    }
+  });
+});
+
+// Effet typewriter sur le premier keystroke
+document.addEventListener('DOMContentLoaded', () => {
+  const firstKeystroke = document.querySelector('.first-keystroke-typewriter');
+  if (!firstKeystroke || !window.ScrollTrigger) return;
+
+  const fullText = firstKeystroke.dataset.fulltext || firstKeystroke.textContent.trim();
+  let started = false;
+  firstKeystroke.textContent = "";
+
+  ScrollTrigger.create({
+    trigger: "#s07",
+    start: "top center", // quand le haut de S07 atteint le centre du viewport
+    onEnter: () => {
+      if (!started) {
+        started = true;
+        let i = 0;
+        function typeWriter() {
+          if (i < fullText.length) {
+            firstKeystroke.textContent += fullText.charAt(i);
+            i++;
+            setTimeout(typeWriter, 60);
+          }
+        }
+        typeWriter();
+      }
+    }
+  });
+});
+
+
+
+
 
 
 

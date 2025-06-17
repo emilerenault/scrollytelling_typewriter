@@ -1,7 +1,4 @@
-@import url('book.css');
-@import url('main.css');
-@import url('layout.css');
-@import url('components.css');
+
 
 :root {
   --color-bg-header: #fff;
@@ -155,15 +152,16 @@ body,
 }
 
 /* MomsTypewriter pour le heading de la s02*/
-.h1 {
+h1 {
   font-size: 40px;
-  font-weight: normal;
+  font-weight: bold;
   line-height: 1.15;
 }
 
-.h2{
+h2{
   font-size: 24px;
-  font-weight: normal;
+  font-weight: bold;
+  line-height: 1.35;
 }
 
 .h3 {
